@@ -6,6 +6,17 @@
     text-decoration: none !important;
     list-style: none;
 }
+a,
+a:hover
+{
+    text-decoration: none !important;
+    color:inherit !important;
+    background: none !important;
+}
+ul
+{
+    margin-bottom: 0 !important;
+}
 .pointer
 {
     cursor: pointer;
@@ -25,7 +36,7 @@ body
 }
 ::selection {
     color: #fff;
-    background: #3E0F41;
+    background: #0E8CE4;
 }
 .fl-left
 {
@@ -52,7 +63,7 @@ input, textarea, select {
     background: #fff;
     border: 1px solid #ddd;
     color: #111;
-    padding: 10px;
+    padding: 10px 15px;
     width: 100%;
     /* letter-spacing: 1px; */
     font-size: 14px;
@@ -98,7 +109,7 @@ input[type="checkbox"]
 input[type="radio"]:checked,
 input[type="checkbox"]:checked
 {
-    background: #3E0F41;
+    background: #0E8CE4;
 }
 input[type=date], input[type=time], input[type=datetime-local], input[type=month]
 {
@@ -109,7 +120,7 @@ button
 {
     background: none;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     font-size: 14px;
     border-radius: 2px;
     cursor: pointer;
@@ -124,9 +135,9 @@ button.sm
     padding: 7px 14px;
     font-size: 13px;
 }
-.purple-btn {
-    background: #3E0F41;
-    color: #111 !important;
+.blue-btn {
+    background: #0E8CE4;
+    color: #fff !important;
 }
 .red-btn {
     background: #d9534f;
@@ -156,9 +167,9 @@ table
 {
     text-align: right !important;
 }
-.text-purple
+.text-blue
 {
-    color:#3E0F41 !important;
+    color:#0E8CE4 !important;
 }
 .text-dark
 {
@@ -179,7 +190,7 @@ table
     height: 100%;
     position: fixed;
     display: none;
-    background:#3E0F41;
+    background:#0E8CE4;
     z-index: 2222;
     opacity: 0.97;
 }
@@ -189,7 +200,7 @@ table
     height: 100%;
     position: fixed;
     display: none;
-    background:#3E0F41;
+    background:#0E8CE4;
     z-index: 9999999;
     opacity: 0.97;
 }
@@ -222,7 +233,7 @@ table
 {
     text-transform: capitalize;
     font-family: 'Oregano', cursive;
-    color:#3E0F41;
+    color:#0E8CE4;
     margin-bottom: 50px;
     font-size: 30px;
     text-align: center;
@@ -248,18 +259,6 @@ footer
     background: #111;
     padding: 10px;
     color:#fff;
-}
-i.fa,
-i.fab
-{
-    width: 35px;
-    height: 35px;
-    line-height: 32px !important;
-    text-align: center;
-    border-radius: 50%;
-    background: #3E0F41;
-    color:#111;
-    margin-right: 10px;
 }
 /* Start Loading */
 .loading
