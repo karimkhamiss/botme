@@ -1,0 +1,51 @@
+body
+{
+    background: #fafafa;
+}
+header
+{
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 1px 5px 1px #e5e5e5;
+}
+header li.dropdown
+{
+    font-size: 17px;
+    line-height: 40px;
+}
+nav
+{
+    background: #0E8CE4;
+    text-align: center;
+}
+nav ul
+{
+    margin: 0;
+    padding: 10px;
+}
+nav ul li
+{
+    padding: 10px 10px;
+    margin-left: 20px;
+    display: inline-block;
+    color:#fff;
+    font-size: 16px;
+    transition: .4s all ease-in-out;
+    border-radius: 3px;
+}
+nav ul li:hover,
+nav ul li.active
+{
+    color:#0E8CE4;
+    background: #fff;
+
+
+}
+nav
+{
+
+}
+nav
+{
+
+}
