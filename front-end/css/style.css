@@ -1,0 +1,165 @@
+header
+{
+}
+header section.info
+{
+    padding: 15px 0;
+    background: #fafafa;
+    border-bottom: 2px solid #f5f5f5;
+    font-size:17px;
+}
+header section.info *
+{
+    line-height: 30px;
+    color:#777;
+}
+header section.info span
+{
+    margin-right: 30px;
+}
+header section.info span i
+{
+    margin-right: 5px;
+}
+header section.info .social i
+{
+    width: 30px;
+    height: 30px;
+    font-size:14px;
+    text-align: center;
+    color:#fff;
+    background: #0E8CE4;
+    border-radius: 50%;
+}
+header nav
+{
+    box-shadow: 0 1px 5px 1px #e5e5e5;
+    font-size: 18px;
+}
+header nav li.dropdown.categories
+{
+    background: #0E8CE4;
+    color:#fff;
+    padding:20px 60px;
+    text-transform: uppercase;
+}
+header nav li.dropdown .dropdown-menu
+{
+    color:#111;
+    font-size: 16px;
+    text-align: center;
+}
+header nav li.dropdown .dropdown-menu li
+{
+    border-bottom: 1px solid #f5f5f5;
+    padding: 5px;
+}
+header nav ul li
+{
+    display: inline-block;
+    color:#777;
+    line-height: 65px;
+    padding-right: 30px;
+}
+header
+{
+
+}
+header
+{
+
+}
+header section.carts
+{
+    padding: 50px 0;
+}
+header section.carts .carts
+{
+    padding-top: 5px;
+}
+header section.carts .carts .cart
+{
+    margin-left: 50px;
+}
+header section.carts .carts .cart i
+{
+    font-size:35px;
+    padding-top: 5px;
+}
+header section.carts .carts .cart .badge
+{
+    position: absolute;
+    background: #0E8CE4;
+    margin-top: 1px;
+}
+header section.carts .carts .cart .caption
+{
+    margin-left: 20px;
+}
+header section.carts .carts .cart .title
+{
+    font-size:20px;
+}
+header section.carts .carts .cart .amount
+{
+    font-size: 16px;
+}
+section.products
+{
+    margin-top: 50px;
+}
+section.products .product
+{
+    border-right: 1px solid #eee;
+    padding: 10px 25px;
+    margin-bottom: 20px;
+}
+section.products .product *,
+section.products .product
+{
+    transition: .4s all ease-in-out;
+}
+section.products .product:hover{
+    box-shadow: 0 1px 5px 1px #e5e5e5;
+}
+section.products .product:hover .custom-hidden{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+
+}
+section.products .product .status
+{
+    padding: 3px 7px;
+    display: inline-block;
+    font-size:14px;
+    text-transform: uppercase;
+    color:#fff;
+}
+section.products .product .header .status.status-new
+{
+    background: #7CC576;
+}
+section.products .product .header .status.status-sale
+{
+    background: #F63440;
+}
+section.products .product .header
+{
+    height: 26px;
+}
+section.products .product .header i
+{
+    font-size: 16px;
+}
+section.products .product button
+{
+}
+section.products .product
+{
+
+}
+section.products .product
+{
+
+}
