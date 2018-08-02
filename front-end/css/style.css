@@ -33,7 +33,7 @@ header section.info .social i
 }
 header nav
 {
-    box-shadow: 0 1px 5px 1px #bbb;
+    box-shadow: 0 1px 5px 1px #e5e5e5;
     font-size: 18px;
 }
 header nav li.dropdown.categories
@@ -103,4 +103,63 @@ header section.carts .carts .cart .title
 header section.carts .carts .cart .amount
 {
     font-size: 16px;
+}
+section.products
+{
+    margin-top: 50px;
+}
+section.products .product
+{
+    border-right: 1px solid #eee;
+    padding: 10px 25px;
+    margin-bottom: 20px;
+}
+section.products .product *,
+section.products .product
+{
+    transition: .4s all ease-in-out;
+}
+section.products .product:hover{
+    box-shadow: 0 1px 5px 1px #e5e5e5;
+}
+section.products .product:hover .custom-hidden{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+
+}
+section.products .product .status
+{
+    padding: 3px 7px;
+    display: inline-block;
+    font-size:14px;
+    text-transform: uppercase;
+    color:#fff;
+}
+section.products .product .header .status.status-new
+{
+    background: #7CC576;
+}
+section.products .product .header .status.status-sale
+{
+    background: #F63440;
+}
+section.products .product .header
+{
+    height: 26px;
+}
+section.products .product .header i
+{
+    font-size: 16px;
+}
+section.products .product button
+{
+}
+section.products .product
+{
+
+}
+section.products .product
+{
+
 }

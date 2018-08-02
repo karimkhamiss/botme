@@ -32,7 +32,8 @@ label
 }
 body
 {
-    color:#111
+    color:#111;
+    height: 5000px;
 }
 ::selection {
     color: #fff;
@@ -182,6 +183,12 @@ table
 .text-white
 {
     color:#fff !important;
+}
+.custom-hidden
+{
+    visibility: hidden;
+    opacity: 0;
+    transition: .4s all ease-in-out;
 }
 /* Popup */
 .background
