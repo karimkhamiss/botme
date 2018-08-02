@@ -190,6 +190,15 @@ table
     opacity: 0;
     transition: .4s all ease-in-out;
 }
+.before-sale
+{
+    text-decoration: line-through !important;
+    font-size: 13px;
+}
+.after-sale
+{
+
+}
 /* Popup */
 .background
 {

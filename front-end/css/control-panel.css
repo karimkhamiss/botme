@@ -45,6 +45,22 @@ nav ul li.active
 {
     padding: 20px;
 }
+.AddButton
+{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #0E8CE4;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 40px;
+    font-size: 30px;
+    padding: 0;
+    box-shadow: 0 1px 5px 1px #bbb;
+    z-index: 999;
+    color: #fff;
+}
 div.table-container
 {
     width: 80%;
