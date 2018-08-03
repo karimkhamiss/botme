@@ -1,5 +1,11 @@
 {% extends 'bases/master.html.twig' %}
 
+{% block styles %}
+    <link rel="stylesheet" href="css/control-panel.css">
+    {% block dashboard_style %}
+
+    {% endblock %}
+{% endblock %}
 {% block contents %}
 
     <header>
@@ -19,14 +25,17 @@
         </div>
     </header>
     {% include('includes/layouts/menu.html.twig') %}
-    <div class="tab-content">
-    <div class="container">
-        {% block tab %}{% endblock %}
-    </div>
-    </div>
+    <section class="contents">
+        <div class="container-fluid">
+        {% block tab_contents %}{% endblock %}
+        </div>
+    </section>
 
 {% endblock %}
 
 {% block scripts %}
+    <script src="js/control-panel.js"></script>
+    {% block dashboard_scripts %}
 
+    {% endblock %}
 {% endblock %}

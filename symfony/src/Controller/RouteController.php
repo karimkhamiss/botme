@@ -10,4 +10,12 @@ class RouteController extends AbstractController
     {
         return $this->render("pages/index.html.twig");
     }
+    public function home()
+    {
+        return $this->render("pages/home.html.twig");
+    }
+    public function categories()
+    {
+        return $this->render("pages/categories.html.twig");
+    }
 }

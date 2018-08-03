@@ -1,3 +1,3 @@
 index:
-    path: /
-    controller: App\Controller\RouteController::index
+    path: /categories
+    controller: App\Controller\RouteController::categories
