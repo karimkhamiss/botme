@@ -9,7 +9,242 @@
 {% endblock %}
 
 {% block contents %}
-
+    <header>
+        {% include('includes/layouts/header-contact.html.twig') %}
+        <section class="carts">
+            <div class="container">
+                <div class="fl-left">
+                    <img width="150" src="images/logo.png" alt="">
+                </div>
+                <div class="fl-right carts">
+                    <div class="cart fl-left">
+                        <div class="fl-left">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="caption fl-left">
+                            <div class="title">
+                                Wishlist
+                            </div>
+                            <div class="text-light">
+                                115
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart fl-left">
+                        <div class="fl-left" style="position: relative">
+                            <i class="fas fa-shopping-bag" style="padding-top:2px"></i>
+                            <span class="badge">20</span>
+                        </div>
+                        <div class="caption fl-left">
+                            <div class="title">
+                                Cart
+                            </div>
+                            <div class="amount text-light">
+                                $85
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </section>
+        {% include('includes/layouts/header-nav.html.twig') %}
+    </header>
+    <section class="products">
+        <div class="container">
+            <div class="product col-md-3">
+                <div class="header">
+                    <div class="fl-left">
+                        <span class="status status-new">New</span>
+                    </div>
+                    <div class="fl-right">
+                        <i class="AddWishList pointer custom-hidden far fa-heart"></i>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/product.jpg" alt="">
+                </div>
+                <div class="caption text-center">
+                    <h4>
+                        Cotton White Underweaer Block Out Edition
+                    </h4>
+                    <h4 class="text-blue">
+                        100 $
+                    </h4>
+                </div>
+                <button class="blue-btn AddToCart custom-hidden col-xs-12">
+                    Add To Cart
+                </button>
+            </div>
+            <div class="product col-md-3">
+                <div class="header">
+                    <div class="fl-left">
+                        <span class="status status-sale">Sale</span>
+                    </div>
+                    <div class="fl-right">
+                        <i class=" pointer custom-hidden far fa-heart"></i>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/product.jpg" alt="">
+                </div>
+                <div class="caption text-center">
+                    <h4>
+                        Cotton White Underweaer Block Out Edition
+                    </h4>
+                    <h4 class="text-blue">
+                        100 $
+                    </h4>
+                </div>
+                <button class="blue-btn AddToCart custom-hidden col-xs-12">
+                    Add To Cart
+                </button>
+            </div>
+            <div class="product col-md-3">
+                <div class="header">
+                    <div class="fl-left">
+                    </div>
+                    <div class="fl-right">
+                        <i class=" pointer custom-hidden far fa-heart"></i>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/product.jpg" alt="">
+                </div>
+                <div class="caption text-center">
+                    <h4>
+                        Cotton White Underweaer Block Out Edition
+                    </h4>
+                    <h4 class="text-blue">
+                        100 $
+                    </h4>
+                </div>
+                <button class="blue-btn AddToCart custom-hidden col-xs-12">
+                    Add To Cart
+                </button>
+            </div>
+            <div class="product col-md-3">
+                <div class="header">
+                    <div class="fl-left">
+                    </div>
+                    <div class="fl-right">
+                        <i class=" pointer custom-hidden far fa-heart"></i>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="image">
+                    <img src="images/product.jpg" alt="">
+                </div>
+                <div class="caption text-center">
+                    <h4>
+                        Cotton White Underweaer Block Out Edition
+                    </h4>
+                    <h4 class="text-blue">
+                        100 $
+                    </h4>
+                </div>
+                <button class="blue-btn AddToCart custom-hidden col-xs-12">
+                    Add To Cart
+                </button>
+            </div>
+            <div class="product col-md-3">
+                <div class="header">
+                    <div class="fl-left">
+                        <span class="status status-new">New</span>
+                    </div>
+                    <div class="fl-right">
+                        <i class="AddWishList pointer custom-hidden far fa-heart"></i>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/product.jpg" alt="">
+                </div>
+                <div class="caption text-center">
+                    <h4>
+                        Cotton White Underweaer Block Out Edition
+                    </h4>
+                    <h4 class="text-blue">
+                        100 $
+                    </h4>
+                </div>
+                <button class="blue-btn AddToCart custom-hidden col-xs-12">
+                    Add To Cart
+                </button>
+            </div>
+            <div class="product col-md-3">
+                <div class="header">
+                    <div class="fl-left">
+                        <span class="status status-sale">Sale</span>
+                    </div>
+                    <div class="fl-right">
+                        <i class=" pointer custom-hidden far fa-heart"></i>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/product.jpg" alt="">
+                </div>
+                <div class="caption text-center">
+                    <h4>
+                        Cotton White Underweaer Block Out Edition
+                    </h4>
+                    <h4 class="text-blue">
+                        <span class="after-sale">100 $</span> <span class="before-sale text-light">250$</span>
+                    </h4>
+                </div>
+                <button class="blue-btn AddToCart custom-hidden col-xs-12">
+                    Add To Cart
+                </button>
+            </div>
+            <div class="product col-md-3">
+                <div class="header">
+                    <div class="fl-left">
+                    </div>
+                    <div class="fl-right">
+                        <i class=" pointer custom-hidden far fa-heart"></i>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="images/product.jpg" alt="">
+                </div>
+                <div class="caption text-center">
+                    <h4>
+                        Cotton White Underweaer Block Out Edition
+                    </h4>
+                    <h4 class="text-blue">
+                        100 $
+                    </h4>
+                </div>
+                <button class="blue-btn AddToCart custom-hidden col-xs-12">
+                    Add To Cart
+                </button>
+            </div>
+            <div class="product col-md-3">
+                <div class="header">
+                    <div class="fl-left">
+                    </div>
+                    <div class="fl-right">
+                        <i class=" pointer custom-hidden far fa-heart"></i>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="image">
+                    <img src="images/product.jpg" alt="">
+                </div>
+                <div class="caption text-center">
+                    <h4>
+                        Cotton White Underweaer Block Out Edition
+                    </h4>
+                    <h4 class="text-blue">
+                        100 $
+                    </h4>
+                </div>
+                <button class="blue-btn AddToCart custom-hidden col-xs-12">
+                    Add To Cart
+                </button>
+            </div>
+        </div>
+    </section>
+    {% include('includes/layouts/loading.html.twig') %}
 {% endblock %}
 
 {% block scripts %}
