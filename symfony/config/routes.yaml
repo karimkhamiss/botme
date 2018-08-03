@@ -1,3 +1,39 @@
+ ##### GET Request To Move Between Pages #####
+
 index:
+    path: /
+    controller: App\Controller\RouteController::index
+
+cart:
+    path: /cart/{id}
+    controller: App\Controller\RouteController::cart
+
+dashboard:
+    path: /dashboard
+    controller: App\Controller\RouteController::dashboard
+
+categories:
     path: /categories
     controller: App\Controller\RouteController::categories
+
+products:
+    path: /products
+    controller: App\Controller\RouteController::products
+
+sales:
+    path: /sales
+    controller: App\Controller\RouteController::sales
+
+clients:
+    path: /clients
+    controller: App\Controller\RouteController::clients
+
+carts:
+    path: /carts
+    controller: App\Controller\RouteController::carts
+
+settings:
+    path: /settings
+    controller: App\Controller\RouteController::settings
+
+ ##### GET Request To Move Between Pages #####

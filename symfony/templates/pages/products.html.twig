@@ -1,17 +1,52 @@
 {% extends 'bases/dashboard.html.twig' %}
 
 {% block title %}
-
+    Products
 {% endblock %}
 
-{% block styles %}
-
+{% block dashboard_style %}
 {% endblock %}
 
-{% block tab %}
+{% block tab_contents %}
+    <button class="blue-btn AddButton">+</button>
+    <div class="table-container">
+        <div class="col-md-12"> <!-- search client -->
+            <div class="col-md-12 filter" id="List-Filter"></div>
+        </div>
+        <table id="List-table" class="list-view text-center">
+            <thead> <!-- main row -->
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            </thead> <!-- main row -->
+            <tbody>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    Karim
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    Ahmed
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <div class="text-center pagination">
 
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
-{% block scripts %}
+{% block dashboard_scripts %}
 
 {% endblock %}

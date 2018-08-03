@@ -1,10 +1,11 @@
 <nav>
     <ul>
-        <a href=""><li class="active">Home</li></a>
-        <a href=""><li>Categories</li></a>
-        <a href=""><li>Products</li></a>
-        <a href=""><li>Sales</li></a>
-        <a href=""><li>Clients</li></a>
-        <a href=""><li>Settings</li></a>
+        <a href="{{ path('dashboard') }}"><li {% if(page == "home") %} class="active" {% endif %}>Home</li></a>
+        <a href="{{ path('categories') }}"><li {% if(page == "categories") %} class="active" {% endif %}>Categories</li></a>
+        <a href="{{ path('products') }}"><li {% if(page == "products") %} class="active" {% endif %}>Products</li></a>
+        <a href="{{ path('sales') }}"><li {% if(page == "sales") %} class="active" {% endif %}>Sales</li></a>
+        <a href="{{ path('carts') }}"><li {% if(page == "carts") %} class="active" {% endif %}>Carts</li></a>
+        <a href="{{ path('clients') }}"><li {% if(page == "clients") %} class="active" {% endif %}>Clients</li></a>
+        <a href="{{ path('settings') }}"><li {% if(page == "settings") %} class="active" {% endif %}>Settings</li></a>
     </ul>
 </nav>
