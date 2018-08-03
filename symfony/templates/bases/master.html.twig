@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Botme - {% block title %}{% endblock %}</title>
+        {% block styles %}{% endblock %}
+    </head>
+    <body>
+    <div class="background"></div>
+    <div id="loading" class="text-center">
+        <img style="margin-top:80px"  src="images/loading.gif" alt="">
+    </div>
+        {% block contents %}{% endblock %}
+    <footer class="text-center">
+        <div class="container">
+            Botme © 2018
+        </div>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+    </body>
+</html>
