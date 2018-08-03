@@ -113,6 +113,7 @@ section.products .product
     border-right: 1px solid #eee;
     padding: 10px 25px;
     margin-bottom: 20px;
+    background: #fff;
 }
 section.products .product *,
 section.products .product
@@ -121,6 +122,9 @@ section.products .product
 }
 section.products .product:hover{
     box-shadow: 0 1px 5px 1px #e5e5e5;
+    transform: scale(1.1, 1.1);
+    z-index: 999;
+
 }
 section.products .product:hover .custom-hidden{
     display: block;
@@ -150,8 +154,14 @@ section.products .product .header
 }
 section.products .product .header i
 {
-    font-size: 16px;
-}
+    font-size: 17px;
+    background: #fafafa;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    color: #F63440;
+    text-align: center;}
 section.products .product button
 {
 }

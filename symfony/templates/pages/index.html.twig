@@ -5,10 +5,17 @@
 {% endblock %}
 
 {% block styles %}
-
+    <style>
+        section.products
+        {
+            min-height: 500px;
+        }
+    </style>
 {% endblock %}
 
 {% block contents %}
+    {% include('includes/forms/auth/signin.html.twig') %}
+    {% include('includes/forms/auth/signup.html.twig') %}
     <header>
         {% include('includes/layouts/header-contact.html.twig') %}
         <section class="carts">
@@ -17,6 +24,7 @@
                     <img width="150" src="images/logo.png" alt="">
                 </div>
                 <div class="fl-right carts">
+                    <a href="/cart/1">
                     <div class="cart fl-left">
                         <div class="fl-left">
                             <i class="far fa-heart"></i>
@@ -30,6 +38,8 @@
                             </div>
                         </div>
                     </div>
+                    </a>
+                    <a href="/cart/2">
                     <div class="cart fl-left">
                         <div class="fl-left" style="position: relative">
                             <i class="fas fa-shopping-bag" style="padding-top:2px"></i>
@@ -44,6 +54,7 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -55,177 +66,11 @@
             <div class="product col-md-3">
                 <div class="header">
                     <div class="fl-left">
-                        <span class="status status-new">New</span>
-                    </div>
-                    <div class="fl-right">
-                        <i class="AddWishList pointer custom-hidden far fa-heart"></i>
-                    </div>
-                </div>
-                <div class="image">
-                    <img src="images/product.jpg" alt="">
-                </div>
-                <div class="caption text-center">
-                    <h4>
-                        Cotton White Underweaer Block Out Edition
-                    </h4>
-                    <h4 class="text-blue">
-                        100 $
-                    </h4>
-                </div>
-                <button class="blue-btn AddToCart custom-hidden col-xs-12">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="product col-md-3">
-                <div class="header">
-                    <div class="fl-left">
                         <span class="status status-sale">Sale</span>
                     </div>
                     <div class="fl-right">
                         <i class=" pointer custom-hidden far fa-heart"></i>
                     </div>
-                </div>
-                <div class="image">
-                    <img src="images/product.jpg" alt="">
-                </div>
-                <div class="caption text-center">
-                    <h4>
-                        Cotton White Underweaer Block Out Edition
-                    </h4>
-                    <h4 class="text-blue">
-                        100 $
-                    </h4>
-                </div>
-                <button class="blue-btn AddToCart custom-hidden col-xs-12">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="product col-md-3">
-                <div class="header">
-                    <div class="fl-left">
-                    </div>
-                    <div class="fl-right">
-                        <i class=" pointer custom-hidden far fa-heart"></i>
-                    </div>
-                </div>
-                <div class="image">
-                    <img src="images/product.jpg" alt="">
-                </div>
-                <div class="caption text-center">
-                    <h4>
-                        Cotton White Underweaer Block Out Edition
-                    </h4>
-                    <h4 class="text-blue">
-                        100 $
-                    </h4>
-                </div>
-                <button class="blue-btn AddToCart custom-hidden col-xs-12">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="product col-md-3">
-                <div class="header">
-                    <div class="fl-left">
-                    </div>
-                    <div class="fl-right">
-                        <i class=" pointer custom-hidden far fa-heart"></i>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="image">
-                    <img src="images/product.jpg" alt="">
-                </div>
-                <div class="caption text-center">
-                    <h4>
-                        Cotton White Underweaer Block Out Edition
-                    </h4>
-                    <h4 class="text-blue">
-                        100 $
-                    </h4>
-                </div>
-                <button class="blue-btn AddToCart custom-hidden col-xs-12">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="product col-md-3">
-                <div class="header">
-                    <div class="fl-left">
-                        <span class="status status-new">New</span>
-                    </div>
-                    <div class="fl-right">
-                        <i class="AddWishList pointer custom-hidden far fa-heart"></i>
-                    </div>
-                </div>
-                <div class="image">
-                    <img src="images/product.jpg" alt="">
-                </div>
-                <div class="caption text-center">
-                    <h4>
-                        Cotton White Underweaer Block Out Edition
-                    </h4>
-                    <h4 class="text-blue">
-                        100 $
-                    </h4>
-                </div>
-                <button class="blue-btn AddToCart custom-hidden col-xs-12">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="product col-md-3">
-                <div class="header">
-                    <div class="fl-left">
-                        <span class="status status-sale">Sale</span>
-                    </div>
-                    <div class="fl-right">
-                        <i class=" pointer custom-hidden far fa-heart"></i>
-                    </div>
-                </div>
-                <div class="image">
-                    <img src="images/product.jpg" alt="">
-                </div>
-                <div class="caption text-center">
-                    <h4>
-                        Cotton White Underweaer Block Out Edition
-                    </h4>
-                    <h4 class="text-blue">
-                        <span class="after-sale">100 $</span> <span class="before-sale text-light">250$</span>
-                    </h4>
-                </div>
-                <button class="blue-btn AddToCart custom-hidden col-xs-12">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="product col-md-3">
-                <div class="header">
-                    <div class="fl-left">
-                    </div>
-                    <div class="fl-right">
-                        <i class=" pointer custom-hidden far fa-heart"></i>
-                    </div>
-                </div>
-                <div class="image">
-                    <img src="images/product.jpg" alt="">
-                </div>
-                <div class="caption text-center">
-                    <h4>
-                        Cotton White Underweaer Block Out Edition
-                    </h4>
-                    <h4 class="text-blue">
-                        100 $
-                    </h4>
-                </div>
-                <button class="blue-btn AddToCart custom-hidden col-xs-12">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="product col-md-3">
-                <div class="header">
-                    <div class="fl-left">
-                    </div>
-                    <div class="fl-right">
-                        <i class=" pointer custom-hidden far fa-heart"></i>
-                    </div>
-                    <div class="clearfix"></div>
                 </div>
                 <div class="image">
                     <img src="images/product.jpg" alt="">
