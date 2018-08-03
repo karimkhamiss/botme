@@ -1,14 +1,14 @@
 {% extends 'bases/master.html.twig' %}
 
-{% block title %}
-
-{% endblock %}
-
-{% block styles %}
-
-{% endblock %}
-
 {% block contents %}
+
+    {#header#}
+    {#Menu#}
+    <div class="tab-content">
+    <div class="container">
+        {% block tab %}{% endblock %}
+    </div>
+    </div>
 
 {% endblock %}
 
