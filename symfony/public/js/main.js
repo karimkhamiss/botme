@@ -21,11 +21,6 @@ $(document).on('click','*',function(){
     if(this.hasAttribute('data-popup'))
     {
         var popup = $(this).attr("data-popup");
-        if(this.hasAttribute("data-img"))
-        {
-            var image = $(this).attr("src");
-            $("#"+popup+" .popup-content img").attr("src",image);
-        }
         $(".popup").fadeOut(300,function(){
             $(".background").fadeIn(300,function(){
                 $("#"+popup+"-popup").fadeIn(300);

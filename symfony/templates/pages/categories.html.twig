@@ -8,7 +8,9 @@
 {% endblock %}
 
 {% block tab_contents %}
-    <button class="blue-btn AddButton">+</button>
+    {% include('includes/forms/categories/add.html.twig') %}
+    {% include('includes/forms/categories/delete.html.twig') %}
+    <button class="blue-btn AddButton" data-popup="add-category">+</button>
     <div class="table-container">
         <div class="col-md-12"> <!-- search client -->
             <div class="col-md-12 filter" id="List-Filter"></div>
@@ -18,6 +20,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Options</th>
             </tr>
             </thead> <!-- main row -->
             <tbody>
@@ -28,6 +31,9 @@
                 <td>
                     Karim
                 </td>
+                <td>
+                    <i class="fa fa-times white DeleteCategory" data-popup="delete-category"></i>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -35,6 +41,9 @@
                 </td>
                 <td>
                     Ahmed
+                </td>
+                <td>
+                <i class="fa fa-times white DeleteCategory" data-popup="delete-category"></i>
                 </td>
             </tr>
             </tbody>

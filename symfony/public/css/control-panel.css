@@ -113,3 +113,54 @@ table td
     background: #0E8CE4 !important;
     color:#fff !important;
 }
+table td i
+{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    color:#fff;
+    line-height: 30px !important;
+    text-align: center;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+table td i.fa-times
+{
+    background: #d9534f;
+    color:#fff;
+}
+.bootstrap-select>.btn
+{
+    text-align: left;
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #999;
+    padding: 10px;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    resize: none;
+    border-radius: 2px;
+    transition: .4s all ease-in-out;
+    text-indent: 2px;
+    outline:0 !important;
+}
+.bootstrap-select>.btn:focus
+{
+    outline:0 !important;
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn)
+{
+    width:100%;
+    text-align: left;
+}
+.bootstrap-select.btn-group .btn .caret
+{
+}
+.bootstrap-select.btn-group .btn .filter-option,
+.open>.dropdown-menu
+{
+    text-align: left;
+}

@@ -8,7 +8,9 @@
 {% endblock %}
 
 {% block tab_contents %}
-    <button class="blue-btn AddButton">+</button>
+    {% include('includes/forms/products/add.html.twig') %}
+    {% include('includes/forms/products/delete.html.twig') %}
+    <button class="blue-btn AddButton" data-popup="add-product">+</button>
     <div class="table-container">
         <div class="col-md-12"> <!-- search client -->
             <div class="col-md-12 filter" id="List-Filter"></div>

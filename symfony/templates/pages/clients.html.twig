@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block tab_contents %}
-    <button class="blue-btn AddButton">+</button>
+    {% include('includes/forms/clients/delete.html.twig') %}
     <div class="table-container">
         <div class="col-md-12"> <!-- search client -->
             <div class="col-md-12 filter" id="List-Filter"></div>

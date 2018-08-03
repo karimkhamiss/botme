@@ -5,10 +5,19 @@
 {% endblock %}
 
 {% block dashboard_style %}
+    <style>
+        #add-sale-popup b
+        {
+            padding: 5px 10px;
+            margin: 10px;
+        }
+    </style>
 {% endblock %}
 
 {% block tab_contents %}
-    <button class="blue-btn AddButton">+</button>
+    {% include('includes/forms/sales/add.html.twig') %}
+    {% include('includes/forms/sales/delete.html.twig') %}
+    <button class="blue-btn AddButton" data-popup="add-sale">+</button>
     <div class="table-container">
         <div class="col-md-12"> <!-- search client -->
             <div class="col-md-12 filter" id="List-Filter"></div>
