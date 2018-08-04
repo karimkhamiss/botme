@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
+use AppBundle\Mapping\EntityBase;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SaleRepository")
  */
-class Sale
+class Sale extends EntityBase
 {
     /**
      * @ORM\Id()
