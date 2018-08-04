@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -24,8 +25,10 @@ class RouteController extends AbstractController
     }
     public function categories()
     {
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
         return $this->render("pages/categories.html.twig", array(
-            'page'=>'categories'
+            'page'=>'categories',
+            'categories'=>$categories
         ));
     }
     public function products()

@@ -18,34 +18,21 @@
         <table id="List-table" class="list-view text-center">
             <thead> <!-- main row -->
             <tr>
-                <th>ID</th>
                 <th>Name</th>
+                <th>Products</th>
                 <th>Options</th>
             </tr>
             </thead> <!-- main row -->
             <tbody>
+    {% for category in categories %}
             <tr>
+                <td>{{ category.name }}</td>
+                <td>{{ (category.products|length) }}</td>
                 <td>
-                    1
-                </td>
-                <td>
-                    Karim
-                </td>
-                <td>
-                    <i class="fa fa-times white DeleteCategory" data-popup="delete-category"></i>
+                    <i class="fa fa-times white DeleteCategory" data-id="{{ category.id }}" data-popup="delete-category"></i>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    2
-                </td>
-                <td>
-                    Ahmed
-                </td>
-                <td>
-                <i class="fa fa-times white DeleteCategory" data-popup="delete-category"></i>
-                </td>
-            </tr>
+        {% endfor %}
             </tbody>
         </table>
         <div class="text-center">
@@ -57,5 +44,5 @@
 {% endblock %}
 
 {% block dashboard_scripts %}
-
+    <script src="ajax/categories.js"></script>
 {% endblock %}
