@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Mapping;
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use DateTime;
@@ -25,7 +25,7 @@ class EntityBase implements EntityBaseInterface
      * @ORM\PrePersist
      * @ORM\PreUpdate
      */
-    public function updatedTimestamps(): void
+    public function updatedTimestamps()
     {
         $dateTimeNow = new DateTime('now');
 
@@ -36,24 +36,27 @@ class EntityBase implements EntityBaseInterface
         }
     }
 
-    public function getCreatedAt() :?DateTime
+    public function getCreatedAt()
     {
         return $this->createdAt;
     }
-    
-    public function setCreatedAt(DateTime $createdAt): self
+    public function setCreatedAt(DateTime $createdAt)
     {
-        $this->createdAt = $createdAt;
-
-        return $this;
+        // TODO: Implement setCreatedAt() method.
     }
+//    public function setCreatedAt(DateTime $createdAt): self
+//    {
+//        $this->createdAt = $createdAt;
+//
+//        return $this;
+//    }
 
-    public function getUpdatedAt() :?DateTime
+    public function getUpdatedAt()
     {
         return $this->updatedAt;
     }
     
-    public function setUpdatedAt(DateTime $updatedAt): self
+    public function setUpdatedAt(DateTime $updatedAt)
     {
         $this->updatedAt = $updatedAt;
 

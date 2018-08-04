@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use AppBundle\Mapping\EntityBase;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
