@@ -30,6 +30,15 @@ products:
     path: /products
     controller: App\Controller\RouteController::products
 
+add_product:
+    path: /products/add
+    controller: App\Controller\ProductController::add
+    methods: [POST]
+
+delete_product:
+    path: /products/delete
+    controller: App\Controller\ProductController::delete
+    methods: [POST]
 sales:
     path: /sales
     controller: App\Controller\RouteController::sales

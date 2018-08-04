@@ -18,27 +18,25 @@
         <table id="List-table" class="list-view text-center">
             <thead> <!-- main row -->
             <tr>
-                <th>ID</th>
                 <th>Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Actions</th>
             </tr>
             </thead> <!-- main row -->
             <tbody>
-            <tr>
-                <td>
-                    1
-                </td>
-                <td>
-                    Karim
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    2
-                </td>
-                <td>
-                    Ahmed
-                </td>
-            </tr>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ (product.category.name) }}</td>
+                    <td>{{ (product.quantity) }}</td>
+                    <td>{{ (product.price) }}</td>
+                    <td>
+                        <i class="fa fa-times white delete-product" data-id="{{ product.id }}" data-popup="delete-product"></i>
+                    </td>
+                </tr>
+            {% endfor %}
             </tbody>
         </table>
         <div class="text-center">
@@ -50,5 +48,5 @@
 {% endblock %}
 
 {% block dashboard_scripts %}
-
+    <script src="ajax/products.js"></script>
 {% endblock %}
