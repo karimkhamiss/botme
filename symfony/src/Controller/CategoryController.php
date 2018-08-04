@@ -17,4 +17,15 @@ class CategoryController extends AbstractController
        $entity_manager->flush();
        return new Response(1);
     }
+    public function delete(Request $request)
+    {
+       $category = $this->getDoctrine()->getRepository(Category::class)
+           ->find($request->request->get('id'));
+       $entity_manager = $this->getDoctrine()->getManager();
+       $entity_manager->remove($category);
+       $entity_manager->flush();
+       return new Response(1);
+
+
+    }
 }

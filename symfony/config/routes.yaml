@@ -21,6 +21,11 @@ add_category:
     controller: App\Controller\CategoryController::add
     methods: [POST]
 
+delete_category:
+    path: /categories/delete
+    controller: App\Controller\CategoryController::delete
+    methods: [POST]
+
 products:
     path: /products
     controller: App\Controller\RouteController::products

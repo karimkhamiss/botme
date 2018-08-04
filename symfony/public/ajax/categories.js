@@ -36,36 +36,36 @@ $(function () {
             }
         });
     });
-    $(".DeleteCategory").click(function(){
+    $(".delete-category").click(function(){
         var CategoryID = $(this).attr("data-id");
-        // alert(CategoryID);
-        $("#DeleteCategory input.hidden").val(CategoryID);
+        alert(CategoryID);
+        $("#delete-category input[name='id']").val(CategoryID);
     })
-    $("#DeleteCategory").submit(function(e){
-        var button = $('#DeleteCategory button');
+    $("#delete-category").submit(function(e){
+        var button = $('#delete-category button');
         button_waiting(button);
         e.preventDefault();
         $.ajax({
             url:"/categories/delete",
             type:"POST",
-            data:$("#DeleteCategory").serialize(),
+            data:$("#delete-category").serialize(),
             success:function(data){
                 // alert(data);
                 // alert(data['responseText']);
                 button_done(button);
-                $("#DeleteCategory label.alert").fadeOut();
+                $("#delete-category label.alert").fadeOut();
                 if(data == 1)
                 {
-                    PrintOnSelector('#DeleteCategory>div.alert', "Deleted Successfully");
-                    $("#DeleteCategory>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
+                    PrintOnSelector('#delete-category>div.alert', "Deleted Successfully");
+                    $("#delete-category>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
                         $(this).delay(1000).fadeOut(function () {
                             location.reload();
                         });
                     });
                 }
                 else {
-                    PrintOnSelector('#DeleteCategory>div.alert', "Unexpected Error Come , Please Try Again");
-                    $("#DeleteCategory>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
+                    PrintOnSelector('#delete-category>div.alert', "Unexpected Error Come , Please Try Again");
+                    $("#delete-category>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
                         $(this).delay(1000).fadeOut(function () {
                             location.reload();
                         });
@@ -74,16 +74,8 @@ $(function () {
 
 
             },
-            error:function(data){reload(data);
-            //tellme(data)
-                button_done(button);
-                 // alert(data['responseText']);
-                PrintOnSelector('#DeleteCategory>div.alert', "Cannot Delete This Category");
-                $("#DeleteCategory>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                    $(this).delay(1000).fadeOut(function () {
-                        location.reload();
-                    });
-                });
+            error:function(data){
+                reload(data);
             }
         });
     })
