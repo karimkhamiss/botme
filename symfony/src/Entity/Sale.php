@@ -55,4 +55,9 @@ class Sale extends EntityBase
 
         return $this;
     }
+    public function getAfterSale()
+    {
+        $before_sale =  $this->getProduct()->getPrice();
+        return $before_sale-(($this->getValue()/100)*$before_sale);
+    }
 }
