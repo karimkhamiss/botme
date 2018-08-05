@@ -10,6 +10,10 @@
         {
             min-height: 500px;
         }
+        .filter li
+        {
+            display: block;
+        }
     </style>
 {% endblock %}
 
@@ -65,6 +69,7 @@
         <div class="container">
             {% for product in products %}
             <div class="product col-md-3">
+                <div class="category hidden">{{ product.category.id }}</div>
                 <div class="header">
                     <div class="fl-left">
                         {% if product.sale %}
@@ -102,5 +107,18 @@
 {% endblock %}
 
 {% block scripts %}
-
+    <script>
+        $(".filter li").click(function(){
+            waiting();
+            var category = $(this).data('id');
+            $(".products .product .category").each(function(){
+                if ($(this).text().search(new RegExp(category, "i")) < 0) {
+                    $(this).parent().delay(500).hide(1);
+                } else {
+                    $(this).parent().delay(500).show(1);
+                }
+            });
+            finish()
+        });
+    </script>
 {% endblock %}
