@@ -63,10 +63,13 @@
     </header>
     <section class="products">
         <div class="container">
+            {% for product in products %}
             <div class="product col-md-3">
                 <div class="header">
                     <div class="fl-left">
+                        {% if product.sale %}
                         <span class="status status-sale">Sale</span>
+                            {% endif %}
                     </div>
                     <div class="fl-right">
                         <i class=" pointer custom-hidden far fa-heart"></i>
@@ -77,16 +80,22 @@
                 </div>
                 <div class="caption text-center">
                     <h4>
-                        Cotton White Underweaer Block Out Edition
+                        {{ product.name }}
                     </h4>
                     <h4 class="text-blue">
-                        100 $
+                {% if product.sale %}
+                    <span class="after-sale">{{ product.sale.afterSale }} $</span>
+                    <span class="before-sale text-light">{{ product.price }} $</span>
+                {% else %}
+                    {{ product.price }} $
+                        {% endif %}
                     </h4>
                 </div>
-                <button class="blue-btn AddToCart custom-hidden col-xs-12">
+                <button data-id="{{ product.id }}" class="blue-btn AddToCart custom-hidden col-xs-12">
                     Add To Cart
                 </button>
             </div>
+            {% endfor %}
         </div>
     </section>
     {% include('includes/layouts/loading.html.twig') %}
