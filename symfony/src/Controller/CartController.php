@@ -17,15 +17,4 @@ class CartController extends AbstractController
        $entity_manager->flush();
        return new Response(1);
     }
-    public function delete(Request $request)
-    {
-       $cart = $this->getDoctrine()->getRepository(Cart::class)
-           ->find($request->request->get('id'));
-       $entity_manager = $this->getDoctrine()->getManager();
-       $entity_manager->remove($cart);
-       $entity_manager->flush();
-       return new Response(1);
-
-
-    }
 }

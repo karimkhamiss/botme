@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Cart;
 use App\Entity\Category;
 use App\Entity\Client;
 use App\Entity\Product;
@@ -68,10 +69,10 @@ class RouteController extends AbstractController
     }
     public function carts()
     {
-//        $carts = $this->getDoctrine()->getRepository(Cart::class)->findAll();
+        $carts = $this->getDoctrine()->getRepository(Cart::class)->findAll();
         return $this->render("pages/carts.html.twig", array(
             'page'=>'carts',
-//            'carts'=>$carts
+            'carts'=>$carts
         ));
     }
     public function settings()

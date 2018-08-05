@@ -9,7 +9,6 @@
 
 {% block tab_contents %}
     {% include('includes/forms/carts/add.html.twig') %}
-    {% include('includes/forms/carts/delete.html.twig') %}
     <button class="blue-btn AddButton" data-popup="add-cart">+</button>
     <div class="table-container">
         <div class="col-md-12"> <!-- search client -->
@@ -19,18 +18,12 @@
             <thead> <!-- main row -->
             <tr>
                 <th>Name</th>
-                <th>Products</th>
-                <th>Options</th>
             </tr>
             </thead> <!-- main row -->
             <tbody>
             {% for cart in carts %}
                 <tr>
                     <td>{{ cart.name }}</td>
-                    <td>{{ (cart.products|length) }}</td>
-                    <td>
-                        <i class="fa fa-times white delete-cart" data-id="{{ cart.id }}" data-popup="delete-cart"></i>
-                    </td>
                 </tr>
             {% endfor %}
             </tbody>

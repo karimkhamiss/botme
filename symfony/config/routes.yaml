@@ -67,13 +67,8 @@ carts:
     controller: App\Controller\RouteController::carts
 
 add_cart:
-    path: /categories/add
+    path: /carts/add
     controller: App\Controller\CartController::add
-    methods: [POST]
-
-delete_cart:
-    path: /categories/delete
-    controller: App\Controller\CartController::delete
     methods: [POST]
 
 settings:
