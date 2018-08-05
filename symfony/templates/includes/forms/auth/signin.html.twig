@@ -4,13 +4,13 @@
         Back to account
     </h3>
     <div class="popup-content">
-        <form id="signin">
+        <form action="{{ path('login') }}" method="post" id="signin">
             <div class="col-xs-12">
-                <input type="text" placeholder="Username">
+                <input type="text" name="_username" placeholder="Username">
                 <label id="signin-username"></label>
             </div>
             <div class="col-xs-12">
-                <input type="password" placeholder="Password">
+                <input type="password" name="_password" placeholder="Password">
                 <label id="signin-password"></label>
             </div>
         <div class="col-xs-12 text-center">

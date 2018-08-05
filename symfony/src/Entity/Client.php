@@ -34,6 +34,16 @@ class Client extends EntityBase
      */
     private $phone;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ClientCartProduct", mappedBy="client", orphanRemoval=true)
+     */
+    private $CartProduct;
+
+    public function __construct()
+    {
+        $this->CartProduct = new ArrayCollection();
+    }
+
     public function getId()
     {
         return $this->id;
@@ -71,6 +81,37 @@ class Client extends EntityBase
     public function setPhone(string $phone): self
     {
         $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ClientCartProduct[]
+     */
+    public function getCartProduct(): Collection
+    {
+        return $this->CartProduct;
+    }
+
+    public function addCartProduct(ClientCartProduct $cartProduct): self
+    {
+        if (!$this->CartProduct->contains($cartProduct)) {
+            $this->CartProduct[] = $cartProduct;
+            $cartProduct->setClient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCartProduct(ClientCartProduct $cartProduct): self
+    {
+        if ($this->CartProduct->contains($cartProduct)) {
+            $this->CartProduct->removeElement($cartProduct);
+            // set the owning side to null (unless already changed)
+            if ($cartProduct->getClient() === $this) {
+                $cartProduct->setClient(null);
+            }
+        }
 
         return $this;
     }

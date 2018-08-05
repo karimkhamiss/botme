@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +43,16 @@ class Product extends EntityBase
      * @ORM\OneToOne(targetEntity="App\Entity\Sale", mappedBy="product", cascade={"persist", "remove"})
      */
     private $sale;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ClientCartProduct", mappedBy="product", orphanRemoval=true)
+     */
+    private $ClientCart;
+
+    public function __construct()
+    {
+        $this->ClientCart = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -107,6 +119,37 @@ class Product extends EntityBase
         // set the owning side of the relation if necessary
         if ($this !== $sale->getProduct()) {
             $sale->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ClientCartProduct[]
+     */
+    public function getClientCart(): Collection
+    {
+        return $this->ClientCart;
+    }
+
+    public function addClientCart(ClientCartProduct $clientCart): self
+    {
+        if (!$this->ClientCart->contains($clientCart)) {
+            $this->ClientCart[] = $clientCart;
+            $clientCart->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeClientCart(ClientCartProduct $clientCart): self
+    {
+        if ($this->ClientCart->contains($clientCart)) {
+            $this->ClientCart->removeElement($clientCart);
+            // set the owning side to null (unless already changed)
+            if ($clientCart->getProduct() === $this) {
+                $clientCart->setProduct(null);
+            }
         }
 
         return $this;

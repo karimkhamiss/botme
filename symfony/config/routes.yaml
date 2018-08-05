@@ -4,6 +4,14 @@ index:
     path: /
     controller: App\Controller\RouteController::index
 
+login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+    methods: [POST]
+logout:
+    path: /logout
+    controller: App\Controller\SecurityController::logout
+
 cart:
     path: /cart/{id}
     controller: App\Controller\RouteController::cart
@@ -69,6 +77,11 @@ carts:
 add_cart:
     path: /carts/add
     controller: App\Controller\CartController::add
+    methods: [POST]
+
+add_to_cart:
+    path: /client/cart/{cart_id}/product/{product_id}/add
+    controller: App\Controller\ClientController::add_to_cart
     methods: [POST]
 
 settings:

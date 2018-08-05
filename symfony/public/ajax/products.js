@@ -1,6 +1,6 @@
 $(function () {
     $('#add-product').submit(function (e) {
-        alert("submitted")
+        // alert("submitted")
         var button = $('#add-product button[type="submit"]');
         button_waiting(button);
         e.preventDefault();
@@ -9,7 +9,7 @@ $(function () {
             type: 'POST',
             data: $('#add-product').serialize(),
             success: function (data) {
-                 alert(data);
+                 // alert(data);
                 $("#add-product label.alert").fadeOut();
                 button_done(button);
                 if(data == 1)

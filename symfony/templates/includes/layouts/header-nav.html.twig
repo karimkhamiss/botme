@@ -13,17 +13,20 @@
             </li>
         </div>
         <ul class="fl-right">
-            <li class="text-blue pointer" data-popup="sign-up">Create Free Account</li>
+            {% if user %}
+                <li class="dropdown user-info">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        {{ user.firstname }} {{ user.lastname }} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="{{ path('logout') }}">Logout</a></li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="text-blue pointer" data-popup="sign-up">Create Free Account</li>
             <li class="text-blue pointer" data-popup="sign-in">Sign in</li>
-            <li class="dropdown user-info">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    Karim Khamiss <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="#">Logout</a></li>
-                </ul>
-            </li>
+            {% endif %}
         </ul>
     </div>
 </nav>

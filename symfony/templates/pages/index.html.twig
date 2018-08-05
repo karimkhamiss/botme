@@ -38,7 +38,7 @@
                                 Wishlist
                             </div>
                             <div class="text-light">
-                                115
+
                             </div>
                         </div>
                     </div>
@@ -47,14 +47,14 @@
                     <div class="cart fl-left">
                         <div class="fl-left" style="position: relative">
                             <i class="fas fa-shopping-bag" style="padding-top:2px"></i>
-                            <span class="badge">20</span>
+                            <span class="badge"></span>
                         </div>
                         <div class="caption fl-left">
                             <div class="title">
                                 Cart
                             </div>
                             <div class="amount text-light">
-                                $85
+                                85 LE
                             </div>
                         </div>
                     </div>
@@ -89,14 +89,14 @@
                     </h4>
                     <h4 class="text-blue">
                 {% if product.sale %}
-                    <span class="after-sale">{{ product.sale.afterSale }} $</span>
-                    <span class="before-sale text-light">{{ product.price }} $</span>
+                    <span class="after-sale">{{ product.sale.afterSale }} LE</span>
+                    <span class="before-sale text-light">{{ product.price }} LE</span>
                 {% else %}
-                    {{ product.price }} $
+                    {{ product.price }} LE
                         {% endif %}
                     </h4>
                 </div>
-                <button data-id="{{ product.id }}" class="blue-btn AddToCart custom-hidden col-xs-12">
+                <button data-product="{{ product.id }}" class="blue-btn AddToCart custom-hidden col-xs-12">
                     Add To Cart
                 </button>
             </div>
@@ -107,6 +107,7 @@
 {% endblock %}
 
 {% block scripts %}
+    <script src="ajax/carts.js"></script>
     <script>
         $(".filter li").click(function(){
             waiting();

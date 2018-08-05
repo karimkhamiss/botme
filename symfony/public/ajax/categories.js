@@ -1,6 +1,6 @@
 $(function () {
     $('#add-category').submit(function (e) {
-        alert("submitted")
+        // alert("submitted")
         var button = $('#add-category button[type="submit"]');
         button_waiting(button);
         e.preventDefault();
@@ -9,7 +9,7 @@ $(function () {
             type: 'POST',
             data: $('#add-category').serialize(),
             success: function (data) {
-                 alert(data);
+                 // alert(data);
                 $("#add-category label.alert").fadeOut();
                 button_done(button);
                 if(data == 1)
@@ -31,7 +31,7 @@ $(function () {
                 }
             },
             error:function(data){
-                alert(data)
+                // alert(data)
                 reload(data);
             }
         });
