@@ -219,6 +219,18 @@ table
     z-index: 9999999;
     opacity: 0.97;
 }
+#loading
+{
+    box-shadow: 0px 5px 7px 0px #a8a8a8;
+    width:30%;
+    height:250px;
+    background: #fff;
+    z-index:99999999;
+    position:fixed;
+    top:25%;
+    left:35%;
+    display: none;
+}
 .popup
 {
     background: #fff;

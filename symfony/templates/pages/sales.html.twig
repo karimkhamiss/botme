@@ -6,10 +6,9 @@
 
 {% block dashboard_style %}
     <style>
-        #add-sale-popup b
+        #sale-result
         {
-            padding: 5px 10px;
-            margin: 10px;
+            display: none;
         }
     </style>
 {% endblock %}
@@ -25,27 +24,25 @@
         <table id="List-table" class="list-view text-center">
             <thead> <!-- main row -->
             <tr>
-                <th>ID</th>
-                <th>Name</th>
+                <th>Product</th>
+                <th>Before Sale</th>
+                <th>Sale Value</th>
+                <th>After Sale</th>
+                <th>Options</th>
             </tr>
             </thead> <!-- main row -->
             <tbody>
-            <tr>
-                <td>
-                    1
-                </td>
-                <td>
-                    Karim
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    2
-                </td>
-                <td>
-                    Ahmed
-                </td>
-            </tr>
+            {% for sale in sales %}
+                <tr>
+                    <td>{{ sale.product.name }}</td>
+                    <td>{{ sale.product.price }}</td>
+                    <td>{{ (sale.value) }}</td>
+                    <td>{{ (sale.value) }}</td>
+                    <td>
+                        <i class="fa fa-times white delete-sale" data-id="{{ sale.id }}" data-popup="delete-sale"></i>
+                    </td>
+                </tr>
+            {% endfor %}
             </tbody>
         </table>
         <div class="text-center">
@@ -57,5 +54,5 @@
 {% endblock %}
 
 {% block dashboard_scripts %}
-
+    <script src="ajax/sales.js"></script>
 {% endblock %}

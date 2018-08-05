@@ -8,14 +8,20 @@
             <div class="col-xs-12">
                 <select name="product_id" class="selectpicker" data-show-subtext="true" data-live-search="true">
                     <option selected disabled value="">Select Product</option>
-                    <option value="" data-subtext="12">Product 1</option>
+                    {% for product in products %}
+                    <option value="{{ product.id }}" data-subtext="{{ product.price }}">{{ product.name }}</option>
+                    {% endfor %}
                 </select>
                 <label id="sale-product_id"></label>
             </div>
             <div class="col-xs-12">
-                <input type="number" name="name" placeholder="Sale Value (%)">
+                <input type="number" name="value" placeholder="Sale Value (%)">
                 <label id="sale-value"></label>
             </div>
+            <button type="button" id="calculate" class="blue-btn col-xs-12">
+                Calculate
+            </button>
+            <div id="sale-result">
             <h3 class="text-center col-md-6" id="before">
                 <div>Original Price</div>
                 <b class="text-blue" id="before-value">150</b>
@@ -24,6 +30,7 @@
                 <div>After Sale</div>
                 <b class="text-blue" id="after-value">20</b>
             </h3>
+            </div>
         <div class="col-xs-12 text-center">
             <button type="submit" class="blue-btn">
                 Add

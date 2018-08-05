@@ -39,9 +39,24 @@ delete_product:
     path: /products/delete
     controller: App\Controller\ProductController::delete
     methods: [POST]
+
 sales:
     path: /sales
     controller: App\Controller\RouteController::sales
+
+get_product_price:
+    path: /sales/product/{id}/{sale_value}/calculate
+    controller: App\Controller\SaleController::calculate
+    methods: [GET]
+add_sale:
+    path: /sales/add
+    controller: App\Controller\SaleController::add
+    methods: [POST]
+
+delete_sale:
+    path: /sales/delete
+    controller: App\Controller\SaleController::delete
+    methods: [POST]
 
 clients:
     path: /clients
@@ -50,6 +65,16 @@ clients:
 carts:
     path: /carts
     controller: App\Controller\RouteController::carts
+
+add_cart:
+    path: /categories/add
+    controller: App\Controller\CartController::add
+    methods: [POST]
+
+delete_cart:
+    path: /categories/delete
+    controller: App\Controller\CartController::delete
+    methods: [POST]
 
 settings:
     path: /settings

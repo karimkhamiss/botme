@@ -8,7 +8,9 @@
 {% endblock %}
 
 {% block tab_contents %}
-    <button class="blue-btn AddButton">+</button>
+    {% include('includes/forms/carts/add.html.twig') %}
+    {% include('includes/forms/carts/delete.html.twig') %}
+    <button class="blue-btn AddButton" data-popup="add-cart">+</button>
     <div class="table-container">
         <div class="col-md-12"> <!-- search client -->
             <div class="col-md-12 filter" id="List-Filter"></div>
@@ -16,27 +18,21 @@
         <table id="List-table" class="list-view text-center">
             <thead> <!-- main row -->
             <tr>
-                <th>ID</th>
                 <th>Name</th>
+                <th>Products</th>
+                <th>Options</th>
             </tr>
             </thead> <!-- main row -->
             <tbody>
-            <tr>
-                <td>
-                    1
-                </td>
-                <td>
-                    Karim
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    2
-                </td>
-                <td>
-                    Ahmed
-                </td>
-            </tr>
+            {% for cart in carts %}
+                <tr>
+                    <td>{{ cart.name }}</td>
+                    <td>{{ (cart.products|length) }}</td>
+                    <td>
+                        <i class="fa fa-times white delete-cart" data-id="{{ cart.id }}" data-popup="delete-cart"></i>
+                    </td>
+                </tr>
+            {% endfor %}
             </tbody>
         </table>
         <div class="text-center">
@@ -48,5 +44,5 @@
 {% endblock %}
 
 {% block dashboard_scripts %}
-
+    <script src="ajax/carts.js"></script>
 {% endblock %}

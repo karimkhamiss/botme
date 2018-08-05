@@ -19,6 +19,7 @@ class ProductController extends AbstractController
        $product->setCategory($category);
        $product->setQuantity($request->request->get('quantity'));
        $product->setPrice($request->request->get('price'));
+       $product->updatedTimestamps();
        $entity_manager->persist($product);
        $entity_manager->flush();
        return new Response(1);

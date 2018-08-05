@@ -40,16 +40,12 @@ class EntityBase implements EntityBaseInterface
     {
         return $this->createdAt;
     }
-    public function setCreatedAt(DateTime $createdAt)
+    public function setCreatedAt(DateTime $createdAt): self
     {
-        // TODO: Implement setCreatedAt() method.
+        $this->createdAt = $createdAt;
+
+        return $this;
     }
-//    public function setCreatedAt(DateTime $createdAt): self
-//    {
-//        $this->createdAt = $createdAt;
-//
-//        return $this;
-//    }
 
     public function getUpdatedAt()
     {
