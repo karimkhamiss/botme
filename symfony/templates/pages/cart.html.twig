@@ -5,11 +5,50 @@
 {% endblock %}
 
 {% block styles %}
-
+    <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
 {% endblock %}
 
 {% block contents %}
-
+{% include('includes/layouts/header-contact.html.twig') %}
+    <section class="cart">
+        <div class="container-fluid">
+            <div class="col-md-8">
+                {% for cart_product in user.client.CartProduct %}
+                    {% if cart_product.cart.id == cart.id %}
+                <div class="cart-item">
+                    <div class="fl-left">
+                        <img src="{{ asset('images/product.jpg') }}" width="100" alt="">
+                    </div>
+                    <div class="fl-left caption">
+                        <h4>
+                            {{ cart_product.product.name }}
+                        </h4>
+                        <h4>Unit Price : <span class="text-blue">{{ cart_product.product.price }} LE</span></h4>
+                        <h4>Quantity : <span class="text-blue">{{ cart_product.quantity }}</span></h4>
+                        <h4>Sub Total : <span class="text-blue">{{ cart_product.getSubTotal }} LE</span></h4>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="option text-right">
+                        <button class="red-btn">Remove</button>
+                    </div>
+                </div>
+                        {% endif %}
+                    {% endfor %}
+                <button class="red-btn col-xs-12">Empty Cart</button>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12 total">
+                    Total:
+                    <div class="amount">
+                        900.00 $
+                    </div>
+                </div>
+                <button class="col-md-12 blue-btn">
+                    Proceed To Checkout
+                </button>
+            </div>
+        </div>
+</section>
 {% endblock %}
 
 {% block scripts %}

@@ -7,20 +7,20 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
               integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/dataTables.bootstrap.css">
-        <link rel="stylesheet" href="css/jquery-ui.css">
-        <link rel="stylesheet" href="css/select.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="images/favicon.png">
+        <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/select.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="icon" href="{{ asset('images/favicon.png') }}">
         {% block styles %}{% endblock %}
     </head>
     <body>
     <div class="background"></div>
     <div class="background2"></div>
     <div id="loading" class="text-center">
-        <img style="margin-top:80px"  src="images/loading.gif" alt="">
+        <img style="margin-top:80px"  src="{{ asset('images/loading.gif') }}" alt="">
     </div>
         {% block contents %}{% endblock %}
     <footer class="text-center">
@@ -30,14 +30,14 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/dataTables.bootstrap.min.js"></script>
-    <script src="js/jquery.dataTables.js"></script>
-    <script src="js/fileinput.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/select.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="ajax/error_handler.js"></script>
+    <script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('js/fileinput.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('js/select.min.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('ajax/error_handler.js') }}"></script>
     {% block scripts %}{% endblock %}
     </body>
 </html>

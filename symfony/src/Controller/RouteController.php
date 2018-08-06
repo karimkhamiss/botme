@@ -24,7 +24,11 @@ class RouteController extends AbstractController
     }
     public function cart($id)
     {
+        $cart = $this->getDoctrine()->getRepository(Cart::class)
+            ->find($id);
         return $this->render("pages/cart.html.twig", array(
+            'cart'=>$cart,
+            'user'=>$this->getUser()
         ));
     }
     public function dashboard()

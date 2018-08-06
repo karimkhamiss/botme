@@ -24,6 +24,7 @@ class ClientController extends Controller
         $client_cart_product = new ClientCartProduct();
         $client_cart_product->setClient($user->getClient());
         $client_cart_product->setCart($cart);
+        $client_cart_product->setQuantity(1);
         $client_cart_product->setProduct($product);
         $entity_manager->persist($client_cart_product);
         $entity_manager->flush();
