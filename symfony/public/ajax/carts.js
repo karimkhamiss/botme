@@ -1,8 +1,9 @@
 $(function () {
-    $("button.AddToCart").click(function(){
+    $(".AddToCart").click(function(){
         waiting();
         var product = $(this).data("product");
-        var cart = 1;
+        var cart = $(this).data("cart");
+        alert("Cart = "+cart);
         $.ajax({
             url : '/client/cart/'+cart+'/product/'+product+'/add',
             type: 'POST',

@@ -1,7 +1,7 @@
 {% extends 'bases/master.html.twig' %}
 
 {% block title %}
-    Home Page
+    {{ cart.name }}
 {% endblock %}
 
 {% block styles %}
@@ -14,9 +14,11 @@
         <div class="container-fluid">
             <div class="col-md-8">
                 {% set total = 0 %}
+                {% set counter = 0 %}
                 {% for cart_product in user.client.CartProduct %}
                     {% if cart_product.cart.id == cart.id %}
-                <div class="cart-item">
+                        {% set counter = counter + 1 %}
+                        <div class="cart-item">
                     <div class="fl-left">
                         <img src="{{ asset('images/product.jpg') }}" width="100" alt="">
                     </div>
@@ -36,8 +38,11 @@
                 </div>
                         {% endif %}
                     {% endfor %}
+                {% if counter %}
                 <button class="red-btn col-xs-12 EmptyCart" data-client="{{ user.client.id }}" data-cart="{{ cart.id }}">Empty Cart</button>
+                {% endif %}
             </div>
+            {% if cart.id == 1 and counter > 0 %}
             <div class="col-md-4">
                 <div class="col-md-12 total">
                     Total:
@@ -49,6 +54,7 @@
                     Proceed To Checkout
                 </button>
             </div>
+            {% endif %}
         </div>
 </section>
 {% endblock %}

@@ -77,7 +77,7 @@
                             {% endif %}
                     </div>
                     <div class="fl-right">
-                        <i class=" pointer custom-hidden far fa-heart"></i>
+                        <i class=" pointer custom-hidden far fa-heart AddToCart" data-cart="2" data-product="{{ product.id }}" ></i>
                     </div>
                 </div>
                 <div class="image">
@@ -96,7 +96,7 @@
                         {% endif %}
                     </h4>
                 </div>
-                <button data-product="{{ product.id }}" class="blue-btn AddToCart custom-hidden col-xs-12">
+                <button data-product="{{ product.id }}" data-cart="1"  class="blue-btn AddToCart custom-hidden col-xs-12">
                     Add To Cart
                 </button>
             </div>
