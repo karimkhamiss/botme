@@ -26,7 +26,15 @@
                         <h4>
                             {{ cart_product.product.name }}
                         </h4>
-                        <h4>Unit Price : <span class="text-blue">{{ cart_product.product.price }} LE</span></h4>
+
+                        <h4>Unit Price : <span class="text-blue">
+                            {% if cart_product.product.sale %}
+                                {{ cart_product.product.sale.afterSale }}
+                                {% else %}
+                                {{ cart_product.product.price }}
+                                {% endif %}
+                                LE
+                            </span></h4>
                         <h4>Quantity : <span class="text-blue">{{ cart_product.quantity }}</span></h4>
                         <h4>Sub Total : <span class="text-blue">{{ cart_product.getSubTotal }} LE</span></h4>
                         {% set total = total + cart_product.getSubTotal %}

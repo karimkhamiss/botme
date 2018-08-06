@@ -93,6 +93,11 @@ class ClientCartProduct
     }
     public function getSubTotal()
     {
-        return $this->quantity * $this->getProduct()->getPrice();
+        $product_price = 0;
+        if($this->getProduct()->getSale())
+            $product_price = $this->getProduct()->getSale()->getAfterSale();
+        else
+            $product_price = $this->getProduct()->getPrice();
+        return $this->quantity * $product_price ;
     }
 }
