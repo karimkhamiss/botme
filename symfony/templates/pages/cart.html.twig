@@ -13,6 +13,7 @@
     <section class="cart">
         <div class="container-fluid">
             <div class="col-md-8">
+                {% set total = 0 %}
                 {% for cart_product in user.client.CartProduct %}
                     {% if cart_product.cart.id == cart.id %}
                 <div class="cart-item">
@@ -26,10 +27,11 @@
                         <h4>Unit Price : <span class="text-blue">{{ cart_product.product.price }} LE</span></h4>
                         <h4>Quantity : <span class="text-blue">{{ cart_product.quantity }}</span></h4>
                         <h4>Sub Total : <span class="text-blue">{{ cart_product.getSubTotal }} LE</span></h4>
+                        {% set total = total + cart_product.getSubTotal %}
                     </div>
                     <div class="clearfix"></div>
                     <div class="option text-right">
-                        <button class="red-btn">Remove</button>
+                        <button class="red-btn RemoveFromCart" data-id="{{ cart_product.id }}">Remove</button>
                     </div>
                 </div>
                         {% endif %}
@@ -40,7 +42,7 @@
                 <div class="col-md-12 total">
                     Total:
                     <div class="amount">
-                        900.00 $
+                        {{ total }} LE
                     </div>
                 </div>
                 <button class="col-md-12 blue-btn">
@@ -52,5 +54,6 @@
 {% endblock %}
 
 {% block scripts %}
+    <script src="{{ asset('ajax/carts.js') }}"></script>
 
 {% endblock %}

@@ -31,4 +31,13 @@ class ClientController extends Controller
         return new Response(1);
 
     }
+    public function remove_from_cart($client_cart_product_id)
+    {
+        $entity_manager = $this->getDoctrine()->getManager();
+        $client_cart_product = $this->getDoctrine()->getRepository(ClientCartProduct::class)
+            ->find($client_cart_product_id);
+        $entity_manager->remove($client_cart_product);
+        $entity_manager->flush();
+        return new Response(1);
+    }
 }

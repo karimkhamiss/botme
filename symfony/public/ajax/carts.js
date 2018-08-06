@@ -6,7 +6,6 @@ $(function () {
         $.ajax({
             url : '/client/cart/'+cart+'/product/'+product+'/add',
             type: 'POST',
-            data: $('#add-cart').serialize(),
             success: function (data) {
                 alert(data);
                 $("#add-cart label.alert").fadeOut();
@@ -26,6 +25,33 @@ $(function () {
                             location.reload();
                         });
                     });
+                }
+            },
+            error:function(data){
+                tellme(data);
+                // reload(data);
+            }
+        });
+        finish();
+
+    });
+    $("button.RemoveFromCart").click(function(){
+        waiting();
+        var id = $(this).data("id");
+        var cart = 1;
+        $.ajax({
+            url : '/client/cart/'+id+'/remove',
+            type: 'POST',
+            success: function (data) {
+                alert(data);
+                $("#add-cart label.alert").fadeOut();
+                if(data == 1)
+                {
+                    location.reload();
+
+                }
+                else {
+                    location.reload();
                 }
             },
             error:function(data){
