@@ -89,6 +89,11 @@ remove_from_cart:
     controller: App\Controller\ClientController::remove_from_cart
     methods: [POST]
 
+empty_cart:
+    path: /client/{client_id}/cart/{cart_id}/empty
+    controller: App\Controller\ClientController::empty_cart
+    methods: [POST]
+
 settings:
     path: /settings
     controller: App\Controller\RouteController::settings
