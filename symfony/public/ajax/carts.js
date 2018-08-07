@@ -12,12 +12,22 @@ $(function () {
                 $("#add-cart label.alert").fadeOut();
                 if(data == 0)
                 {
-                    alert("Please Login First")
+                    PrintOnSelector('body>div.alert div', "Please Login First");
+                    PrintOnSelector('body>div.alert strong', "Error!");
+                    $("body>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
+                        $(this).delay(1500).fadeOut();
+                    });
 
                 }
                 else {
                     $(".cart #"+data['cart']).text(data['total']);
-                    button.remove();                }
+                    button.remove();
+                    PrintOnSelector('body>div.alert div', "Added To Cart");
+                    PrintOnSelector('body>div.alert strong', "Success!");
+                    $("body>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
+                        $(this).delay(1500).fadeOut();
+                    });
+                }
             },
             error:function(data){
                 tellme(data);
@@ -47,14 +57,13 @@ $(function () {
                 }
             },
             error:function(data){
-                tellme(data);
-                // reload(data);
+                // tellme(data);
+                reload(data);
             }
         });
         finish();
 
     });
-
     $("button.RemoveFromCart").click(function(){
         waiting();
         var id = $(this).data("id");

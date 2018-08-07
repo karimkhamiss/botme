@@ -18,7 +18,9 @@
 {% endblock %}
 
 {% block contents %}
-    {% include('includes/forms/auth/signin.html.twig') %}
+    <div class="alert" role="alert">
+        <strong>Success!</strong> <div>Added To Cart</div>
+    </div>    {% include('includes/forms/auth/signin.html.twig') %}
     {% include('includes/forms/auth/signup.html.twig') %}
     <header>
         {% include('includes/layouts/header-contact.html.twig') %}
@@ -107,12 +109,11 @@
         $(".filter li").click(function(){
             waiting();
             var category = $(this).data('id');
-            if(category == "all")
-            {
+            if(category == "all") {
                 $(".products .product").each(function () {
                     $(this).delay(500).show(1);
                 });
-
+            }
             else {
                 $(".products .product .category").each(function () {
                     if ($(this).text().search(new RegExp(category, "i")) < 0) {

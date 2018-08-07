@@ -264,7 +264,7 @@ table
     font-size: 28px;
     text-align: center;
 }
-.alert
+form .alert
 {
     padding: 10px 20px;
     width:75%;
@@ -273,6 +273,14 @@ table
     margin:10px auto;
     display: none;
     text-align: center;
+}
+body>.alert
+{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    width:210px;
 }
 /* Popup */
 /* ------------------------------- */
