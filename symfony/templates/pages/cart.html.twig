@@ -10,6 +10,7 @@
 
 {% block contents %}
 {% include('includes/layouts/header-contact.html.twig') %}
+{% include('includes/forms/carts/update-quantity.html.twig') %}
     <section class="cart">
         <div class="container-fluid">
             <div class="col-md-8">
@@ -35,7 +36,13 @@
                                 {% endif %}
                                 LE
                             </span></h4>
-                        <h4>Quantity : <span class="text-blue">{{ cart_product.quantity }}</span></h4>
+                        <h4>Quantity : <span class="text-blue">
+                                {{ cart_product.quantity }}
+                                {% if cart.id == 1 %}
+                                    <button style="margin-left: 10px"  data-id="{{ cart_product.id }}" data-popup="update-quantity" class="UpdateCart sm blue-btn">Update</button>
+                                {% endif %}
+                            </span>
+                        </h4>
                         <h4>Sub Total : <span class="text-blue">{{ cart_product.getSubTotal }} LE</span></h4>
                         {% set total = total + cart_product.getSubTotal %}
                     </div>

@@ -6,6 +6,7 @@
                     <i class="fa fa-bars"></i> &nbsp; Categories
                 </a>
                 <ul class="dropdown-menu filter">
+                    <li data-id="all"><a href="#">All</a></li>
                     {% for category in categories %}
                         <li data-id="{{ category.id }}"><a href="#">{{ category.name }}</a></li>
                     {% endfor %}

@@ -25,6 +25,35 @@ $(function () {
         });
         finish();
     });
+    var id_to_update;
+    $("button.UpdateCart").click(function(){
+        id_to_update = $(this).attr("data-id");
+        $("#update-quantity input[name='id']").val(id_to_update);
+    });
+    $("form#update-quantity").submit(function(){
+        $.ajax({
+            url : '/client/cart/update',
+            type: 'POST',
+            data:$("#update-quantity").serialize(),
+            success: function (data) {
+                if(data == 1)
+                {
+                    location.reload();
+
+                }
+                else {
+                    location.reload();
+                }
+            },
+            error:function(data){
+                tellme(data);
+                // reload(data);
+            }
+        });
+        finish();
+
+    });
+
     $("button.RemoveFromCart").click(function(){
         waiting();
         var id = $(this).data("id");

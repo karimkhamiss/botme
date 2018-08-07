@@ -105,13 +105,20 @@
         $(".filter li").click(function(){
             waiting();
             var category = $(this).data('id');
-            $(".products .product .category").each(function(){
-                if ($(this).text().search(new RegExp(category, "i")) < 0) {
-                    $(this).parent().delay(500).hide(1);
-                } else {
-                    $(this).parent().delay(500).show(1);
-                }
-            });
+            if(category == "all") {
+                $(".products .product").each(function () {
+                    $(this).delay(500).show(1);
+                });
+            }
+            else {
+                $(".products .product .category").each(function () {
+                    if ($(this).text().search(new RegExp(category, "i")) < 0) {
+                        $(this).parent().delay(500).hide(1);
+                    } else {
+                        $(this).parent().delay(500).show(1);
+                    }
+                });
+            }
             finish()
         });
     </script>
