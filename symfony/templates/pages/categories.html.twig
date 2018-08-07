@@ -9,7 +9,6 @@
 
 {% block tab_contents %}
     {% include('includes/forms/categories/add.html.twig') %}
-    {% include('includes/forms/categories/delete.html.twig') %}
     <button class="blue-btn AddButton" data-popup="add-category">+</button>
     <div class="table-container">
         <div class="col-md-12"> <!-- search client -->
@@ -20,7 +19,6 @@
             <tr>
                 <th>Name</th>
                 <th>Products</th>
-                <th>Options</th>
             </tr>
             </thead> <!-- main row -->
             <tbody>
@@ -28,9 +26,6 @@
             <tr>
                 <td>{{ category.name }}</td>
                 <td>{{ (category.products|length) }}</td>
-                <td>
-                    <i class="fa fa-times white delete-category" data-id="{{ category.id }}" data-popup="delete-category"></i>
-                </td>
             </tr>
         {% endfor %}
             </tbody>

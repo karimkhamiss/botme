@@ -30,7 +30,7 @@
                     <img width="150" src="images/logo.png" alt="">
                 </div>
                 <div class="fl-right carts">
-                    {% for cart in carts if cart.getId < 3 %}
+                    {% for cart in carts %}
                     <a href="/cart/{{ cart.getId() }}">
                     <div class="cart fl-left">
                         <div class="fl-left" style="position: relative">
@@ -46,7 +46,9 @@
                             </div>
                             <div class="amount text-light">
                                 {%  if user  %}
+                                    {% if user.role == "client" %}
                                <span id="Cart{{ cart.id }}">{{ cart.getTotal(user.getClient().id) }}</span>
+                                {% endif %}
                                 {% endif %}
                                 {% if cart.id == 1 %}
                                 LE
@@ -104,6 +106,7 @@
 {% endblock %}
 
 {% block scripts %}
+    <script src="ajax/auth.js"></script>
     <script src="ajax/carts.js"></script>
     <script>
         $(".filter li").click(function(){

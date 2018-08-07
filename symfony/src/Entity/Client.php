@@ -95,27 +95,4 @@ class Client extends EntityBase
     {
         return $this->CartProduct;
     }
-
-    public function addCartProduct(ClientCartProduct $cartProduct): self
-    {
-        if (!$this->CartProduct->contains($cartProduct)) {
-            $this->CartProduct[] = $cartProduct;
-            $cartProduct->setClient($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCartProduct(ClientCartProduct $cartProduct): self
-    {
-        if ($this->CartProduct->contains($cartProduct)) {
-            $this->CartProduct->removeElement($cartProduct);
-            // set the owning side to null (unless already changed)
-            if ($cartProduct->getClient() === $this) {
-                $cartProduct->setClient(null);
-            }
-        }
-
-        return $this;
-    }
 }

@@ -112,18 +112,6 @@ class Product extends EntityBase
         return $this->sale;
     }
 
-    public function setSale(Sale $sale): self
-    {
-        $this->sale = $sale;
-
-        // set the owning side of the relation if necessary
-        if ($this !== $sale->getProduct()) {
-            $sale->setProduct($this);
-        }
-
-        return $this;
-    }
-
     /**
      * @return Collection|ClientCartProduct[]
      */
@@ -132,26 +120,4 @@ class Product extends EntityBase
         return $this->ClientCart;
     }
 
-    public function addClientCart(ClientCartProduct $clientCart): self
-    {
-        if (!$this->ClientCart->contains($clientCart)) {
-            $this->ClientCart[] = $clientCart;
-            $clientCart->setProduct($this);
-        }
-
-        return $this;
-    }
-
-    public function removeClientCart(ClientCartProduct $clientCart): self
-    {
-        if ($this->ClientCart->contains($clientCart)) {
-            $this->ClientCart->removeElement($clientCart);
-            // set the owning side to null (unless already changed)
-            if ($clientCart->getProduct() === $this) {
-                $clientCart->setProduct(null);
-            }
-        }
-
-        return $this;
-    }
 }

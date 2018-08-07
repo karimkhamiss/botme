@@ -29,7 +29,7 @@ $(function () {
         finish();
     });
     $('#add-sale').submit(function (e) {
-        alert("submitted")
+        // alert("submitted")
         var button = $('#add-sale button[type="submit"]');
         button_waiting(button);
         e.preventDefault();
@@ -38,7 +38,7 @@ $(function () {
             type: 'POST',
             data: $('#add-sale').serialize(),
             success: function (data) {
-                 alert(data);
+                 // alert(data);
                 $("#add-sale label.alert").fadeOut();
                 button_done(button);
                 if(data == 1)

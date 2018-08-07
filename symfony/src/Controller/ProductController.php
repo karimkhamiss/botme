@@ -24,13 +24,4 @@ class ProductController extends AbstractController
        $entity_manager->flush();
        return new Response(1);
     }
-    public function delete(Request $request)
-    {
-       $product = $this->getDoctrine()->getRepository(Product::class)
-           ->find($request->request->get('id'));
-       $entity_manager = $this->getDoctrine()->getManager();
-       $entity_manager->remove($product);
-       $entity_manager->flush();
-       return new Response(1);
-    }
 }

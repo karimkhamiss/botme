@@ -91,6 +91,10 @@ class ClientCartProduct
 
         return $this;
     }
+
+/**
+ *   Get sub total of each product by product price & quantity
+*/
     public function getSubTotal()
     {
         $product_price = 0;

@@ -22,7 +22,7 @@ class Sale extends EntityBase
     private $value;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Product", inversedBy="sale", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Product", inversedBy="sale")
      * @ORM\JoinColumn(nullable=false)
      */
     private $product;
@@ -55,6 +55,9 @@ class Sale extends EntityBase
 
         return $this;
     }
+    /**
+    Calculate price after sale to use it in twig and calculation
+     */
     public function getAfterSale()
     {
         $before_sale =  $this->getProduct()->getPrice();

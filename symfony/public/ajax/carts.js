@@ -8,14 +8,22 @@ $(function () {
             url : '/client/cart/'+cart+'/product/'+product+'/add',
             type: 'POST',
             success: function (data) {
-                alert(data);
                 $("#add-cart label.alert").fadeOut();
                 if(data == 0)
                 {
                     PrintOnSelector('body>div.alert div', "Please Login First");
                     PrintOnSelector('body>div.alert strong', "Error!");
                     $("body>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                        $(this).delay(1500).fadeOut();
+                        $(this).delay(3000).fadeOut();
+                    });
+
+                }
+                else if(data == 2)
+                {
+                    PrintOnSelector('body>div.alert div', "You must be a client");
+                    PrintOnSelector('body>div.alert strong', "Error!");
+                    $("body>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
+                        $(this).delay(3000).fadeOut();
                     });
 
                 }
@@ -25,7 +33,7 @@ $(function () {
                     PrintOnSelector('body>div.alert div', "Added To Cart");
                     PrintOnSelector('body>div.alert strong', "Success!");
                     $("body>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                        $(this).delay(1500).fadeOut();
+                        $(this).delay(3000).fadeOut();
                     });
                 }
             },
@@ -72,7 +80,7 @@ $(function () {
             url : '/client/cart/'+id+'/remove',
             type: 'POST',
             success: function (data) {
-                alert(data);
+                // alert(data);
                 $("#add-cart label.alert").fadeOut();
                 if(data == 1)
                 {
@@ -99,7 +107,7 @@ $(function () {
             url : '/client/'+client+'/cart/'+cart+'/empty',
             type: 'POST',
             success: function (data) {
-                alert(data);
+                // alert(data);
                 $("#add-cart label.alert").fadeOut();
                 if(data == 1)
                 {

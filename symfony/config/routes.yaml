@@ -8,6 +8,12 @@ login:
     path: /login
     controller: App\Controller\SecurityController::login
     methods: [POST]
+
+signup:
+    path: /signup
+    controller: App\Controller\SecurityController::signup
+    methods: [POST]
+
 get_login:
     path: /login
     controller: App\Controller\RouteController::index

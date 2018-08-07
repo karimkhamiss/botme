@@ -15,26 +15,34 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class ClientController extends Controller
 {
 
+    /**
+     * Return Total Cart to be live updated
+     */
     public function add_to_cart($cart_id, $product_id)
     {
         if($this->getUser()) {
-            $user = $this->getUser();
-            $entity_manager = $this->getDoctrine()->getManager();
-            $product = $this->getDoctrine()->getRepository(Product::class)
-                ->find($product_id);
-            $cart = $this->getDoctrine()->getRepository(Cart::class)
-                ->find($cart_id);
-            $client_cart_product = new ClientCartProduct();
-            $client_cart_product->setClient($user->getClient());
-            $client_cart_product->setCart($cart);
-            $client_cart_product->setQuantity(1);
-            $client_cart_product->setProduct($product);
-            $entity_manager->persist($client_cart_product);
-            $entity_manager->flush();
-            return new JsonResponse(array(
-                'cart' => "Cart".$cart_id,
-                'total' => $client_cart_product->getCart()->getTotal($user->getClient()->getId())
-            ));
+            if($this->getUser()->getClient())
+            {
+                $user = $this->getUser();
+                $entity_manager = $this->getDoctrine()->getManager();
+                $product = $this->getDoctrine()->getRepository(Product::class)
+                    ->find($product_id);
+                $cart = $this->getDoctrine()->getRepository(Cart::class)
+                    ->find($cart_id);
+                $client_cart_product = new ClientCartProduct();
+                $client_cart_product->setClient($user->getClient());
+                $client_cart_product->setCart($cart);
+                $client_cart_product->setQuantity(1);
+                $client_cart_product->setProduct($product);
+                $entity_manager->persist($client_cart_product);
+                $entity_manager->flush();
+                return new JsonResponse(array(
+                    'cart' => "Cart".$cart_id,
+                    'total' => $client_cart_product->getCart()->getTotal($user->getClient()->getId())
+                ));
+            }
+            else
+                return new Response(2);
         }
         else
             return new Response(0);

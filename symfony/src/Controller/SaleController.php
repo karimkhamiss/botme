@@ -10,6 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SaleController extends AbstractController
 {
+    /**
+        Return JSON with product after and before sale
+     */
     public function calculate($id,$sale_value)
     {
         $product = $this->getDoctrine()->getRepository(Product::class)

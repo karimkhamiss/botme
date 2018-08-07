@@ -11,6 +11,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RouteController extends AbstractController
 {
+    /**
+            Check User Role to manage permissions
+     */
     private function check_admin()
     {
         if($this->getUser())
@@ -37,17 +40,17 @@ class RouteController extends AbstractController
     public function cart($id)
     {
         if($this->getUser()) {
-            $cart = $this->getDoctrine()->getRepository(Cart::class)
-                ->find($id);
-            return $this->render("pages/cart.html.twig", array(
-                'cart' => $cart,
-                'user' => $this->getUser()
-            ));
+            if($this->getUser()->getClient())
+            {
+                $cart = $this->getDoctrine()->getRepository(Cart::class)
+                    ->find($id);
+                return $this->render("pages/cart.html.twig", array(
+                    'cart' => $cart,
+                    'user' => $this->getUser()
+                ));
+            }
         }
-        else
-        {
             return $this->render("pages/404.html.twig");
-        }
     }
     public function dashboard()
     {

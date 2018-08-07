@@ -28,11 +28,9 @@ class Cart
      * @ORM\OneToMany(targetEntity="App\Entity\ClientCartProduct", mappedBy="cart", orphanRemoval=true)
      */
     private $ClientProducts;
-    private $user;
 
-    public function __construct(TokenStorageInterface $tokenStorage)
+    public function __construct()
     {
-        $this->user = $tokenStorage->getToken()->getUser();
         $this->ClientProducts = new ArrayCollection();
     }
 
@@ -61,28 +59,9 @@ class Cart
         return $this->ClientProducts;
     }
 
-    public function addClientProduct(ClientCartProduct $clientProduct): self
-    {
-        if (!$this->ClientProducts->contains($clientProduct)) {
-            $this->ClientProducts[] = $clientProduct;
-            $clientProduct->setCart($this);
-        }
-
-        return $this;
-    }
-
-    public function removeClientProduct(ClientCartProduct $clientProduct): self
-    {
-        if ($this->ClientProducts->contains($clientProduct)) {
-            $this->ClientProducts->removeElement($clientProduct);
-            // set the owning side to null (unless already changed)
-            if ($clientProduct->getCart() === $this) {
-                $clientProduct->setCart(null);
-            }
-        }
-
-        return $this;
-    }
+    /**
+     *   Get Total of the shopping cart by using client_id and subtotal of each product
+     */
     public function getTotal($client_id)
     {
         $total = 0;
