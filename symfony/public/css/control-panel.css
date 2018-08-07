@@ -2,7 +2,7 @@ body
 {
     background: #fafafa;
 }
-header
+header nav
 {
     background: #fff;
     padding: 10px;
@@ -13,17 +13,17 @@ header li.dropdown
     font-size: 17px;
     line-height: 40px;
 }
-nav
+body>nav
 {
     background: #0E8CE4;
     text-align: center;
 }
-nav ul
+body>nav ul
 {
     margin: 0;
     padding: 10px;
 }
-nav ul li
+body>nav ul li
 {
     padding: 10px 10px;
     margin-left: 20px;
@@ -33,8 +33,8 @@ nav ul li
     transition: .4s all ease-in-out;
     border-radius: 3px;
 }
-nav ul li:hover,
-nav ul li.active
+body>nav ul li:hover,
+body>nav ul li.active
 {
     color:#0E8CE4;
     background: #fff;

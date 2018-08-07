@@ -84,7 +84,10 @@ class Client extends EntityBase
 
         return $this;
     }
-
+    public function getName()
+    {
+        return $this->getUser()->getFirstname()." ".$this->getUser()->getLastname();
+    }
     /**
      * @return Collection|ClientCartProduct[]
      */

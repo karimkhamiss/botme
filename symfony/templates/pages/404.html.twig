@@ -1,0 +1,42 @@
+{% extends 'bases/master.html.twig' %}
+
+{% block title %}
+    Page Not Found
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block contents %}
+    <header>
+        {% include('includes/layouts/header-contact.html.twig') %}
+    </header>
+    ERROR 404 , Page Not Found
+    {% include('includes/layouts/loading.html.twig') %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="ajax/carts.js"></script>
+    <script>
+        $(".filter li").click(function(){
+            waiting();
+            var category = $(this).data('id');
+            if(category == "all") {
+                $(".products .product").each(function () {
+                    $(this).delay(500).show(1);
+                });
+            }
+            else {
+                $(".products .product .category").each(function () {
+                    if ($(this).text().search(new RegExp(category, "i")) < 0) {
+                        $(this).parent().delay(500).hide(1);
+                    } else {
+                        $(this).parent().delay(500).show(1);
+                    }
+                });
+            }
+            finish()
+        });
+    </script>
+{% endblock %}

@@ -9,20 +9,7 @@
 {% block contents %}
 
     <header>
-        <div class="container">
-            <div class="fl-left">
-                <img width="150" src="images/logo.png" alt="">
-            </div>
-            <li class="fl-right dropdown user-info">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    Karim Khamiss <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="#">Logout</a></li>
-                </ul>
-            </li>
-        </div>
+        {% include('includes/layouts/header-nav.html.twig') %}
     </header>
     {% include('includes/layouts/menu.html.twig') %}
     <section class="contents">

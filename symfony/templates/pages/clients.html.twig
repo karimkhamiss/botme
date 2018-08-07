@@ -16,27 +16,25 @@
         <table id="List-table" class="list-view text-center">
             <thead> <!-- main row -->
             <tr>
-                <th>ID</th>
                 <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
             </tr>
             </thead> <!-- main row -->
             <tbody>
+            {% for client in clients %}
             <tr>
                 <td>
-                    1
+                    {{ client.name }}
                 </td>
                 <td>
-                    Karim
+                    {{ client.address }}
+                </td>
+                <td>
+                    {{ client.phone }}
                 </td>
             </tr>
-            <tr>
-                <td>
-                    2
-                </td>
-                <td>
-                    Ahmed
-                </td>
-            </tr>
+                {% endfor %}
             </tbody>
         </table>
         <div class="text-center">

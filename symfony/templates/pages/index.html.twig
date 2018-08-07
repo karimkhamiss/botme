@@ -43,7 +43,9 @@
                                 {{ cart.name }}
                             </div>
                             <div class="amount text-light">
-                               <span id="Cart{{ cart.id }}">{{ cart.getTotal(1) }}</span>
+                                {%  if user  %}
+                               <span id="Cart{{ cart.id }}">{{ cart.getTotal(user.getClient().id) }}</span>
+                                {% endif %}
                                 {% if cart.id == 1 %}
                                 LE
                                 {% endif %}
@@ -105,11 +107,12 @@
         $(".filter li").click(function(){
             waiting();
             var category = $(this).data('id');
-            if(category == "all") {
+            if(category == "all")
+            {
                 $(".products .product").each(function () {
                     $(this).delay(500).show(1);
                 });
-            }
+
             else {
                 $(".products .product .category").each(function () {
                     if ($(this).text().search(new RegExp(category, "i")) < 0) {

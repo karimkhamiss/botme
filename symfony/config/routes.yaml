@@ -8,6 +8,10 @@ login:
     path: /login
     controller: App\Controller\SecurityController::login
     methods: [POST]
+get_login:
+    path: /login
+    controller: App\Controller\RouteController::index
+    methods: [GET]
 logout:
     path: /logout
     controller: App\Controller\SecurityController::logout
@@ -29,11 +33,6 @@ add_category:
     controller: App\Controller\CategoryController::add
     methods: [POST]
 
-delete_category:
-    path: /categories/delete
-    controller: App\Controller\CategoryController::delete
-    methods: [POST]
-
 products:
     path: /products
     controller: App\Controller\RouteController::products
@@ -41,11 +40,6 @@ products:
 add_product:
     path: /products/add
     controller: App\Controller\ProductController::add
-    methods: [POST]
-
-delete_product:
-    path: /products/delete
-    controller: App\Controller\ProductController::delete
     methods: [POST]
 
 sales:

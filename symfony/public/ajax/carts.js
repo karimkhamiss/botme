@@ -8,15 +8,16 @@ $(function () {
             url : '/client/cart/'+cart+'/product/'+product+'/add',
             type: 'POST',
             success: function (data) {
+                alert(data);
                 $("#add-cart label.alert").fadeOut();
-                if(data)
+                if(data == 0)
                 {
-                   $(".cart #"+data['cart']).text(data['total']);
-                    button.remove();
-                }
-                else {
+                    alert("Please Login First")
 
                 }
+                else {
+                    $(".cart #"+data['cart']).text(data['total']);
+                    button.remove();                }
             },
             error:function(data){
                 tellme(data);
