@@ -1,31 +1,21 @@
 $(function () {
     $(".AddToCart").click(function(){
+        var button = $(this);
         waiting();
         var product = $(this).data("product");
         var cart = $(this).data("cart");
-        alert("Cart = "+cart);
         $.ajax({
             url : '/client/cart/'+cart+'/product/'+product+'/add',
             type: 'POST',
             success: function (data) {
-                alert(data);
                 $("#add-cart label.alert").fadeOut();
-                if(data == 1)
+                if(data)
                 {
-                    PrintOnSelector('#add-cart>div.alert', "Added Successfully");
-                    $("#add-cart>div.alert").removeClass("alert-danger").addClass("alert-success").fadeIn(function () {
-                        $(this).delay(1000).fadeOut(function () {
-                            location.reload();
-                        });
-                    });
+                   $(".cart #"+data['cart']).text(data['total']);
+                    button.remove();
                 }
                 else {
-                    PrintOnSelector('#add-cart>div.alert', "Unexpected Error Come , Please Try Again");
-                    $("#add-cart>div.alert").removeClass("alert-success").addClass("alert-danger").fadeIn(function () {
-                        $(this).delay(1000).fadeOut(function () {
-                            location.reload();
-                        });
-                    });
+
                 }
             },
             error:function(data){
@@ -34,7 +24,6 @@ $(function () {
             }
         });
         finish();
-
     });
     $("button.RemoveFromCart").click(function(){
         waiting();

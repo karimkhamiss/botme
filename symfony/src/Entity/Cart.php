@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CartRepository")
@@ -27,9 +28,11 @@ class Cart
      * @ORM\OneToMany(targetEntity="App\Entity\ClientCartProduct", mappedBy="cart", orphanRemoval=true)
      */
     private $ClientProducts;
+    private $user;
 
-    public function __construct()
+    public function __construct(TokenStorageInterface $tokenStorage)
     {
+        $this->user = $tokenStorage->getToken()->getUser();
         $this->ClientProducts = new ArrayCollection();
     }
 
@@ -79,5 +82,23 @@ class Cart
         }
 
         return $this;
+    }
+    public function getTotal($client_id)
+    {
+        $total = 0;
+        $counter = 0;
+        $client_cart_product_array = $this->getClientProducts();
+        foreach ($client_cart_product_array as $client_cart_product_to_item)
+        {
+            if($client_cart_product_to_item->getClient()->getId() == $client_id)
+            {
+                $total += $client_cart_product_to_item->getSubTotal();
+                $counter += 1;
+            }
+        }
+        if($this->id == 1)
+        return $total;
+        else
+            return $counter;
     }
 }

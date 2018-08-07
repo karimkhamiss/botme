@@ -16,9 +16,11 @@ class RouteController extends AbstractController
 
         $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
+        $carts = $this->getDoctrine()->getRepository(Cart::class)->findAll();
         return $this->render("pages/index.html.twig", array(
             'products'=>$products,
             'categories'=>$categories,
+            'carts'=>$carts,
             'user'=>$this->getUser()
         ));
     }

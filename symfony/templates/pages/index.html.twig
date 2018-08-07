@@ -28,37 +28,30 @@
                     <img width="150" src="images/logo.png" alt="">
                 </div>
                 <div class="fl-right carts">
-                    <a href="/cart/2">
-                    <div class="cart fl-left">
-                        <div class="fl-left">
-                            <i class="far fa-heart"></i>
-                        </div>
-                        <div class="caption fl-left">
-                            <div class="title">
-                                Wishlist
-                            </div>
-                            <div class="text-light">
-
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                    <a href="/cart/1">
+                    {% for cart in carts if cart.getId < 3 %}
+                    <a href="/cart/{{ cart.getId() }}">
                     <div class="cart fl-left">
                         <div class="fl-left" style="position: relative">
-                            <i class="fas fa-shopping-bag" style="padding-top:2px"></i>
-                            <span class="badge"></span>
+                            {% if cart.id == 1 %}
+                                <i class="fas fa-shopping-bag" style="padding-top:2px"></i>
+                            {% else %}
+                                <i class="far fa-heart"></i>
+                            {% endif %}
                         </div>
                         <div class="caption fl-left">
                             <div class="title">
-                                Cart
+                                {{ cart.name }}
                             </div>
                             <div class="amount text-light">
-                                85 LE
+                               <span id="Cart{{ cart.id }}">{{ cart.getTotal(1) }}</span>
+                                {% if cart.id == 1 %}
+                                LE
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                     </a>
+                    {% endfor %}
                 </div>
                 <div class="clearfix"></div>
             </div>
