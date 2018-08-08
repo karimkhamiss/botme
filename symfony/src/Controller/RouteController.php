@@ -71,11 +71,6 @@ class RouteController extends AbstractController
     {
         if($this->check_admin())
         {
-            $form = $this->createFormBuilder($task)
-                ->add('task', TextType::class)
-                ->add('dueDate', DateType::class)
-                ->add('save', SubmitType::class, array('label' => 'Create Task'))
-                ->getForm();
             $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
             return $this->render("pages/categories.html.twig", array(
                 'page'=>'categories',

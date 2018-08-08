@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 use App\Entity\Category;
-use Doctrine\DBAL\Types\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,8 +14,19 @@ class CategoryController extends AbstractController
     {
         $category = new Category();
         $form = $this->createFormBuilder($category)
-            ->add('name', TextType::class)
-            ->add('save', SubmitType::class, array('label' => 'Add Category'))
+            ->add('name', TextType::class,array(
+                'label'=>false,
+                'required'=>true,
+                'attr' => array(
+                    'placeholder' => 'Category Name',
+                )
+            ))
+            ->add('save', SubmitType::class, array(
+                'label' => 'Add Category',
+                'attr' => array(
+                    'class' => 'blue-btn',
+                )
+            ))
             ->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -27,7 +38,8 @@ class CategoryController extends AbstractController
         }
         return $this->render('bases/form.html.twig',array(
             'form' =>$form->createView(),
-            'title'=>"Add Category",
+            'page'=>"Add New Category",
+            'user'=>$this->getUser(),
             'route_to_back'=>"/categories"
         ));
     }

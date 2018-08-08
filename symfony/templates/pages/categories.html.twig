@@ -8,8 +8,8 @@
 {% endblock %}
 
 {% block tab_contents %}
-    {% include('includes/forms/categories/add.html.twig') %}
-    <button class="blue-btn AddButton" data-popup="add-category">+</button>
+    {#{% include('includes/forms/categories/add.html.twig') %}#}
+    <a href="{{ path('add_category') }}"><button class="blue-btn AddButton">+</button></a>
     <div class="table-container">
         <div class="col-md-12"> <!-- search client -->
             <div class="col-md-12 filter" id="List-Filter"></div>

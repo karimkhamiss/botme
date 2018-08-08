@@ -37,7 +37,6 @@ categories:
 add_category:
     path: /categories/add
     controller: App\Controller\CategoryController::add
-    methods: [POST]
 
 products:
     path: /products

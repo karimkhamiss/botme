@@ -2,14 +2,38 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Botme - {{ title }}</title>
+    <title>Botme - {{ page }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/select.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/control-panel.css') }}">
    <link rel="icon" href="{{ asset('images/favicon.png') }}">
+    <style>
+        section.form-info
+        {
+            background: #0E8CE4;
+            color:#fff;
+            padding: 20px;
+            font-size:18px;
+        }
+        section.contents
+        {
+            min-height: 500px;
+        }
+        section.form-container
+        {
+            padding:50px;
+            background: #fff;
+            margin: 40px auto;
+            width: 60%;
+            box-shadow: 0px 0px 20px 1px #aaa;
+        }
+
+    </style>
 </head>
 <body>
 <div class="background"></div>
@@ -17,11 +41,19 @@
 {% include('includes/layouts/header-nav.html.twig') %}
     <section class="form-info">
         <div class="container">
-            <h2 class="fl-left">Form : {{ title }}</h2>
-            <h2 class="fl-right"><a href="{{ route_to_back }}">Back</a></h2>
+            <span class="fl-left">Form</span>
+            <a class="fl-right" href="{{ route_to_back }}">Back</a>
         </div>
     </section>
 </header>
+<section class="contents">
+<section class="form-container text-center">
+    <h3 class="popup-title">{{ page }}</h3>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </section>
+</section>
 <footer class="text-center">
     <div class="container">
         Botme © 2018
