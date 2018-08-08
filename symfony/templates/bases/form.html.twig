@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Botme - {{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/select.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+   <link rel="icon" href="{{ asset('images/favicon.png') }}">
+</head>
+<body>
+<div class="background"></div>
+<header>
+{% include('includes/layouts/header-nav.html.twig') %}
+    <section class="form-info">
+        <div class="container">
+            <h2 class="fl-left">Form : {{ title }}</h2>
+            <h2 class="fl-right"><a href="{{ route_to_back }}">Back</a></h2>
+        </div>
+    </section>
+</header>
+<footer class="text-center">
+    <div class="container">
+        Botme © 2018
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="{{ asset('js/select.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('ajax/error_handler.js') }}"></script>
+</body>
+</html>
