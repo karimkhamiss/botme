@@ -7,12 +7,10 @@ index:
 login:
     path: /login
     controller: App\Controller\SecurityController::login
-    methods: [POST]
 
 signup:
     path: /signup
     controller: App\Controller\SecurityController::signup
-    methods: [POST]
 
 get_login:
     path: /login
@@ -45,7 +43,6 @@ products:
 add_product:
     path: /products/add
     controller: App\Controller\ProductController::add
-    methods: [POST]
 
 sales:
     path: /sales
@@ -58,12 +55,10 @@ get_product_price:
 add_sale:
     path: /sales/add
     controller: App\Controller\SaleController::add
-    methods: [POST]
 
 delete_sale:
     path: /sales/delete
     controller: App\Controller\SaleController::delete
-    methods: [POST]
 
 clients:
     path: /clients
@@ -76,7 +71,6 @@ carts:
 add_cart:
     path: /carts/add
     controller: App\Controller\CartController::add
-    methods: [POST]
 
 add_to_cart:
     path: /client/cart/{cart_id}/product/{product_id}/add
@@ -86,7 +80,6 @@ add_to_cart:
 update_cart:
     path: /client/cart/update
     controller: App\Controller\ClientController::update_cart
-    methods: [POST]
 
 remove_from_cart:
     path: /client/cart/{client_cart_product_id}/remove
